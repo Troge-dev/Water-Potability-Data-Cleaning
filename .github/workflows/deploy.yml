@@ -1,4 +1,4 @@
-﻿name: Deploy Jupyter Book to GitHub Pages
+name: Deploy Jupyter Book to GitHub Pages
 
 on:
   push:
@@ -44,6 +44,8 @@ jobs:
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
+        with:
+          enablement: true
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

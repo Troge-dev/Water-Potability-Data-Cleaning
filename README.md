@@ -126,13 +126,14 @@ In this project, we built a **step-by-step Python cleaning pipeline** to fix the
 
 ## 🛠️ Project Structure
 
-* `notebooks/water_potability_data_cleaning.ipynb`: The main notebook for submission containing the complete data cleaning process.
+* `presentation.ipynb` / `notebooks/presentation.ipynb`: The comprehensive presentation and submission notebook containing the complete data cleaning pipeline, visualizations, evaluations, and oral defense notes.
 * `docs/index.md`: Book overview, problem statement, and dataset attribution.
 * `docs/01_dataset_codebook.md`: Plain-English chemical codebook, dataset provenance, and WHO guidelines.
 * `docs/03_defense_guide.md`: Defense questions, data origin, and answers.
 * `data/raw/water_potability.csv`: The raw dataset sourced from the Kaggle repository.
 * `data/processed/water_potability_cleaned.csv`: The final cleaned dataset.
 * `myst.yml`: Configuration file for the interactive Jupyter Book.
+
 
 ---
 

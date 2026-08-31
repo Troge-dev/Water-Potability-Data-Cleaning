@@ -42,6 +42,9 @@ Access to safe drinking water is threatened by natural mineral runoff and chemic
 ### Core Investigation Question
 > *How can we systematically detect, audit, and clean sensor probe anomalies, missing chemical tests, and mineral concentration outliers to ensure that water safety classification strictly adheres to World Health Organization (WHO) safety standards?*
 
+**Simplified Version (Plain Language):**
+> *How can we fix sensor errors and fill in missing test data so we can accurately determine whether water is safe to drink?*
+
 ---
 
 ## Dataset Profile

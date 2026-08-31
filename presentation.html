@@ -9935,49 +9935,6 @@ Total Missing Values: 0
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=77d996a2">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<hr/>
-<h2 id="7.-Presentation-&amp;-Oral-Defense-Guide">7. Presentation &amp; Oral Defense Guide<a class="anchor-link" href="#7.-Presentation-&amp;-Oral-Defense-Guide">¶</a></h2><p>Use these concise, plain-English answers during oral defense and presentation Q&amp;A:</p>
-<hr/>
-<h3 id="Question-1:-Where-does-this-dataset-originate-from-and-what-does-it-represent?">Question 1: Where does this dataset originate from and what does it represent?<a class="anchor-link" href="#Question-1:-Where-does-this-dataset-originate-from-and-what-does-it-represent?">¶</a></h3><blockquote>
-<p><strong>Answer:</strong> Sourced from the public <a href="https://www.kaggle.com/datasets/adityakadiwal/water-potability">Kaggle Water Potability Dataset</a> by Aditya Kadiwal. It comprises <strong>3,276 water quality observations</strong> across diverse water sources (aquifers, treatment plants, taps) tested across 9 physicochemical metrics against World Health Organization (WHO) safety standards.</p>
-</blockquote>
-<hr/>
-<h3 id="Question-2:-Why-did-you-impute-missing-values-instead-of-deleting-rows-(dropna())?">Question 2: Why did you impute missing values instead of deleting rows (<code>dropna()</code>)?<a class="anchor-link" href="#Question-2:-Why-did-you-impute-missing-values-instead-of-deleting-rows-(dropna())?">¶</a></h3><blockquote>
-<p><strong>Answer:</strong> Nearly <strong>39% of the water samples (1,265 rows)</strong> had at least one missing chemical test. If we deleted those rows, we would discard over one-third of our dataset, reducing statistical power and introducing severe sample selection bias.</p>
-</blockquote>
-<hr/>
-<h3 id="Question-3:-Why-did-you-choose-the-Median-over-the-Mean-for-imputation?">Question 3: Why did you choose the Median over the Mean for imputation?<a class="anchor-link" href="#Question-3:-Why-did-you-choose-the-Median-over-the-Mean-for-imputation?">¶</a></h3><blockquote>
-<p><strong>Answer:</strong> Environmental chemical concentrations are inherently skewed by localized mineral spikes. The <strong>mean</strong> is distorted by extreme values, whereas the <strong>median</strong> identifies the true middle value representing typical water chemistry.</p>
-</blockquote>
-<hr/>
-<h3 id="Question-4:-Why-did-you-perform-imputation-separately-for-Potable-and-Non-Potable-water?">Question 4: Why did you perform imputation separately for Potable and Non-Potable water?<a class="anchor-link" href="#Question-4:-Why-did-you-perform-imputation-separately-for-Potable-and-Non-Potable-water?">¶</a></h3><blockquote>
-<p><strong>Answer:</strong> Safe drinking water and contaminated water have fundamentally different chemical baselines. Grouping by <code>Potability</code> ensures that missing measurements are filled with realistic numbers characteristic of each water type, preserving class separability for downstream modeling.</p>
-</blockquote>
-<hr/>
-<h3 id="Question-5:-Why-must-pH-strictly-adhere-to-the-range-of-0-to-14?">Question 5: Why must pH strictly adhere to the range of 0 to 14?<a class="anchor-link" href="#Question-5:-Why-must-pH-strictly-adhere-to-the-range-of-0-to-14?">¶</a></h3><blockquote>
-<p><strong>Answer:</strong> In physical chemistry, aqueous pH is defined as $-\log_{10}[\text{H}_3\text{O}^+]$ and is bounded between 0 (concentrated acid) and 14 (concentrated base). Any reading outside this range represents a physical probe malfunction or uncalibrated voltage.</p>
-</blockquote>
-<hr/>
-<h3 id="Question-6:-Why-didn't-you-delete-all-high-Solids-(TDS)-as-outliers-using-the-standard-$1.5-%5Ctimes-%5Ctext%7BIQR%7D$-rule?">Question 6: Why didn't you delete all high Solids (TDS) as outliers using the standard $1.5 \times \text{IQR}$ rule?<a class="anchor-link" href="#Question-6:-Why-didn't-you-delete-all-high-Solids-(TDS)-as-outliers-using-the-standard-$1.5-%5Ctimes-%5Ctext%7BIQR%7D$-rule?">¶</a></h3><blockquote>
-<p><strong>Answer:</strong> Natural groundwater and mineral-rich springs can legitimately contain 20,000 to 30,000 ppm of dissolved minerals. A standard $1.5 \times \text{IQR}$ rule would have deleted 47 authentic, valid mineral water samples. An extreme boundary ($3.0 \times \text{IQR} \approx 62,331\text{ ppm}$) protects natural mineral water, allowing <strong>100% data retention</strong>.</p>
-</blockquote>
-<hr/>
-<h3 id="Key-Presentation-Takeaways-Checklist:">Key Presentation Takeaways Checklist:<a class="anchor-link" href="#Key-Presentation-Takeaways-Checklist:">¶</a></h3><ol>
-<li><strong>Source:</strong> Kaggle Water Potability Dataset by Aditya Kadiwal (3,276 rows × 10 columns).</li>
-<li><strong>Key Challenge:</strong> 38.6% missing measurements, sensor probe glitches, and skewed mineral concentrations.</li>
-<li><strong>Core Solutions:</strong> Physical pH bounding, class-conditional median imputation, and extreme IQR validation.</li>
-<li><strong>Final Outcome:</strong> <strong>100% complete dataset</strong>, <strong>0 missing values</strong>, and <strong>100% sample retention (3,276 / 3,276 samples)</strong> ready for EDA and machine learning.</li>
-</ol>
-</div>
-</div>
-</div>
-</div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=d124250d">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -9985,7 +9942,7 @@ Total Missing Values: 0
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <hr/>
-<h2 id="8.-Executive-End-to-End-Project-Summary">8. Executive End-to-End Project Summary<a class="anchor-link" href="#8.-Executive-End-to-End-Project-Summary">¶</a></h2><h3 id="8.1-Key-Findings-&amp;-Analytical-Insights">8.1 Key Findings &amp; Analytical Insights<a class="anchor-link" href="#8.1-Key-Findings-&amp;-Analytical-Insights">¶</a></h3><ol>
+<h2 id="7.-Executive-End-to-End-Project-Summary">7. Executive End-to-End Project Summary<a class="anchor-link" href="#7.-Executive-End-to-End-Project-Summary">¶</a></h2><h3 id="7.1-Key-Findings-&amp;-Analytical-Insights">7.1 Key Findings &amp; Analytical Insights<a class="anchor-link" href="#7.1-Key-Findings-&amp;-Analytical-Insights">¶</a></h3><ol>
 <li><strong>Class Distribution (61.0% Unsafe vs. 39.0% Safe):</strong><ul>
 <li>The dataset contains <strong>1,998 Non-Potable (0)</strong> and <strong>1,278 Potable (1)</strong> water samples (a difference of 720 samples).</li>
 <li>This moderate class distribution reflects real-world environmental sampling where untreated or compromised water sources are frequently tested.</li>
@@ -10008,7 +9965,7 @@ Total Missing Values: 0
 </li>
 </ol>
 <hr/>
-<h3 id="8.2-Before-vs.-After-Cleaning-Audit-&amp;-Pipeline-Actions">8.2 Before vs. After Cleaning Audit &amp; Pipeline Actions<a class="anchor-link" href="#8.2-Before-vs.-After-Cleaning-Audit-&amp;-Pipeline-Actions">¶</a></h3><table>
+<h3 id="7.2-Before-vs.-After-Cleaning-Audit-&amp;-Pipeline-Actions">7.2 Before vs. After Cleaning Audit &amp; Pipeline Actions<a class="anchor-link" href="#7.2-Before-vs.-After-Cleaning-Audit-&amp;-Pipeline-Actions">¶</a></h3><table>
 <thead>
 <tr>
 <th style="text-align:left">Inspection / Check</th>
@@ -10071,7 +10028,7 @@ Total Missing Values: 0
 </tbody>
 </table>
 <hr/>
-<h3 id="8.3-Recommended-Next-Steps-for-Modeling">8.3 Recommended Next Steps for Modeling<a class="anchor-link" href="#8.3-Recommended-Next-Steps-for-Modeling">¶</a></h3><ul>
+<h3 id="7.3-Recommended-Next-Steps-for-Modeling">7.3 Recommended Next Steps for Modeling<a class="anchor-link" href="#7.3-Recommended-Next-Steps-for-Modeling">¶</a></h3><ul>
 <li><strong>Algorithm Selection:</strong> Utilize non-linear ensemble models (Random Forest, XGBoost, LightGBM) capable of learning complex multi-variable interactions.</li>
 <li><strong>Resampling / Class Weights:</strong> Apply stratified cross-validation and class-weight balancing to address the 61:39 class ratio.</li>
 <li><strong>Deployment:</strong> Cleaned dataset is production-ready and saved at <code>data/processed/water_potability_cleaned.csv</code>.</li>
@@ -10087,7 +10044,7 @@ Total Missing Values: 0
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <hr/>
-<h2 id="9.-References-&amp;-Dataset-Attribution">9. References &amp; Dataset Attribution<a class="anchor-link" href="#9.-References-&amp;-Dataset-Attribution">¶</a></h2><ol>
+<h2 id="8.-References-&amp;-Dataset-Attribution">8. References &amp; Dataset Attribution<a class="anchor-link" href="#8.-References-&amp;-Dataset-Attribution">¶</a></h2><ol>
 <li><strong>Dataset Source:</strong> Kadiwal, Aditya. <em>Water Potability: Drinking Water Quality Dataset</em>. Available on Kaggle: <a href="https://www.kaggle.com/datasets/adityakadiwal/water-potability">https://www.kaggle.com/datasets/adityakadiwal/water-potability</a>.</li>
 <li><strong>Water Quality Guidelines:</strong> World Health Organization (WHO). <em>Guidelines for Drinking-water Quality (4th Edition)</em>, Geneva: World Health Organization.</li>
 <li><strong>Global Target:</strong> United Nations Sustainable Development Goal 6 (UN SDG 6): <em>Ensure availability and sustainable management of water and sanitation for all</em>.</li>

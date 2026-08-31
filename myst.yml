@@ -15,10 +15,8 @@ project:
     - "public health"
   toc:
     - file: docs/index.md
-    - file: docs/01_dataset_codebook.md
     - file: notebooks/presentation.ipynb
     - file: docs/03_defense_guide.md
-
 
 site:
   template: book-theme
@@ -29,4 +27,3 @@ site:
         url: "https://github.com/Troge-dev/Water-Potability-Data-Cleaning"
       - title: "Dataset Source (Kaggle)"
         url: "https://www.kaggle.com/datasets/adityakadiwal/water-potability"
-

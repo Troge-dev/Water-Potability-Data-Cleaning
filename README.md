@@ -1,147 +1,93 @@
-# Laboratory Activity 1: Data Cleaning Pipeline
-# Water Potability and Drinking Water Safety Assessment
+# Water Potability Data Cleaning Pipeline & Quality Assurance
+### DS311 - Exploratory Data Analysis (EDA) | Laboratory Activity 1
 
-[![Jupyter Book](https://img.shields.io/badge/Jupyter%20Book-Interactive%20Site-blue)](https://troge-dev.github.io/Water-Potability-Data-Cleaning/)
-[![Dataset](https://img.shields.io/badge/Dataset-Kaggle%20Water%20Quality-green)](https://www.kaggle.com/datasets/adityakadiwal/water-potability)
-[![UN SDG 6](https://img.shields.io/badge/UN%20SDG%206-Clean%20Water%20%26%20Sanitation-orange)](https://sdgs.un.org/goals/goal6)
+[![Jupyter Book](https://img.shields.io/badge/Jupyter%20Book-Live%20Documentation-blue)](https://troge-dev.github.io/Water-Potability-Data-Cleaning)
+[![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-brightgreen)](https://www.python.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![WHO Standards](https://img.shields.io/badge/Standards-WHO%20Guidelines-teal)](https://www.who.int/publications/i/item/9789241549950)
+[![Dataset: Kaggle](https://img.shields.io/badge/Dataset-Kaggle%20Water%20Potability-blue)](https://www.kaggle.com/datasets/adityakadiwal/water-potability)
 
----
-
-## 📌 Project Overview (In Simple Words)
-
-Clean drinking water is essential for everyone's health. In this project, we analyze water quality test data to find out whether water is **safe to drink (`Potability = 1`)** or **unsafe (`Potability = 0`)**.
-
-However, real-world data from water sensors and lab tests often has major issues:
-1. **Missing Test Results:** Lab tests are expensive, so some water samples are missing chemical measurements (especially Sulfate and pH).
-2. **Broken Sensor Readings:** Faulty sensors can record impossible numbers (like negative pH readings).
-3. **Extreme Mineral Spikes:** Some natural wells have huge amounts of minerals, while other spikes are just sensor glitches.
-
-In this project, we built a **step-by-step Python cleaning pipeline** to fix these problems so the data is accurate, complete, and ready for charts and predictions.
+An end-to-end, domain-informed data cleaning, exploratory analysis, and diagnostic quality assurance pipeline for drinking water safety assessment, benchmarked against World Health Organization (WHO) standards.
 
 ---
 
-## 🎯 Main Question We Are Investigating
+## 1. Project Overview & Scope
 
-> **"How can we fix sensor errors and fill in missing test data so we can accurately determine whether water is safe to drink?"**
+Clean drinking water is fundamental to human life and disease prevention (UN Sustainable Development Goal 6). Municipal utilities and environmental agencies measure chemical and physical indicators ? including **pH**, **chlorine residuals**, **dissolved minerals**, and **clarity** ? to determine whether water is potable.
 
-### Our Main Rule
-> *"Never delete or change data just because it looks different. First understand what the numbers mean in real life, then apply smart rules."*
+This project evaluates the [Kaggle Water Potability Dataset](https://www.kaggle.com/datasets/adityakadiwal/water-potability) by Aditya Kadiwal (3,276 water samples across 9 physicochemical features + 1 potability classification target).
+
+### Key Data Quality Challenges Identified:
+* **Severe Missingness:** 1,265 samples (38.61% of dataset) had missing values across `Sulfate` (23.84%), `ph` (14.99%), and `Trihalomethanes` (4.95%).
+* **Sensor Anomalies:** Uncalibrated sensor voltages produced impossible pH readings outside the physical range of $[0, 14]$.
+* **Extreme Mineral Concentrations:** Heavy mineral groundwater exhibited Total Dissolved Solids (TDS) up to 61,227 ppm.
+
+### Pipeline Remediation & Results:
+* **100% Sample Preservation:** Applied class-conditional median imputation and extreme IQR fences ($3.0\times\text{IQR}$), retaining all 3,276 water samples (0 samples lost).
+* **Zero Missing Values:** Resolved all 1,434 missing entries while preserving class-specific chemical baselines.
+* **Standardized Clean Dataset:** Standardized continuous features to 3 decimal places and exported to `data/processed/water_potability_cleaned.csv`.
 
 ---
 
-## 📊 The 4 Steps of Data Preparation
+## 2. Jupyter Book Structure & Navigation
 
-| Step | Simple Meaning | What We Did in This Project |
+The Jupyter Book documentation is structured into **3 core pages**:
+
+| Page | File Path | Focus & Content |
 | :--- | :--- | :--- |
-| **1. Data Wrangling** | Loading and organizing the files. | Loading the raw CSV file and checking its size and types. |
-| **2. Data Cleaning** | Finding and fixing errors and missing values. | Fixing impossible pH readings, filling missing values with group medians, and removing crazy sensor spikes. |
-| **3. Data Transformation** | Standardizing number formats. | Rounding long decimals to 3 places and making sure labels are clean integers. |
-| **4. Feature Engineering** | Creating new helpful features (optional). | Preparing the data for future machine learning models. |
+| **1. Landing Page & Codebook** | `docs/index.md` | Executive overview, project background, 9-feature physicochemical codebook, WHO drinking limits, and 4 preparation stages. |
+| **2. Interactive Pipeline** | `notebooks/presentation.ipynb` | Full executable Python pipeline, missingness matrix, MCAR/MAR diagnostics, benchmark comparison tables, and before-vs-after audit dashboards. |
+| **3. Defense & Q&A Guide** | `docs/03_defense_guide.md` | 13 oral defense questions with two-tier answers (Spoken Summary & Technical Rationale) and presentation cheat sheet. |
 
 ---
 
-## 🧪 Dataset Details & Simple Water Guide
+## 3. Dataset Codebook & Physicochemical Reference
 
-* **Dataset Source:** [Water Potability Dataset on Kaggle](https://www.kaggle.com/datasets/adityakadiwal/water-potability) by Aditya Kadiwal
-* **Filename:** `water_potability.csv` (Raw), `water_potability_cleaned.csv` (Processed)
-* **Dataset Scope:** 3,276 water samples collected across various water bodies, evaluating 9 physicochemical metrics against WHO drinking standards.
-* **Size:** 3,276 water samples × 10 columns
-* **Target:** `Potability` (`1` = Safe to drink, `0` = Unsafe to drink)
-
-### What the 9 Water Measurements Mean (Plain English)
-
-| Column Name | What it Measures | Everyday Meaning | Safe Limit (WHO Standard) |
+| Column Name | Metric / Unit | WHO Safe Benchmark | Everyday Description |
 | :--- | :--- | :--- | :--- |
-| `ph` | **Acidity / Alkalinity** | How acidic or basic water is ($0 = \text{acid}$, $7 = \text{neutral}$, $14 = \text{basic}$). | **6.5 to 8.5** is safe. |
-| `Hardness` | **Mineral Content** | Dissolved calcium and magnesium from rocks. | Normal in water; high levels make soap hard to bubble. |
-| `Solids` | **Dissolved Minerals & Salts** | Total amount of dissolved minerals and salts (TDS). | Up to **1,000 ppm** is good. High levels taste salty. |
-| `Chloramines` | **Disinfectant / Chlorine** | Chlorine added to kill bacteria and germs. | Safe limit: **$\le$ 4.0 ppm**. |
-| `Sulfate` | **Natural Rock Minerals** | Natural minerals washed from rocks into water. | Safe guideline: **$\le$ 250 mg/L**. |
-| `Conductivity` | **Electricity Flow** | How well electricity moves through water (indicates dissolved salts). | Typical limit: **$\le$ 400 $\mu$S/cm**. |
-| `Organic_carbon` | **Plant & Organic Matter** | Amount of decaying leaves and organic matter in water. | Lower is cleaner and safer. |
-| `Trihalomethanes` | **Chlorine Byproducts** | Chemical byproducts created when chlorine mixes with organic matter. | Safe limit: **$\le$ 80 $\mu$g/L**. |
-| `Turbidity` | **Cloudiness / Clarity** | How clear or cloudy the water looks. | Safe limit: **$\le$ 5.0 NTU** (should be clear). |
-| `Potability` | **Drinking Safety** | Final safety label: `1` = Safe to drink, `0` = Unsafe. | Target variable. |
+| `ph` | pH ($0\text{?}14$) | **6.5 to 8.5** | Acidity / alkalinity measure. Values $<6.5$ corrode pipes; $>8.5$ cause mineral scaling. |
+| `Hardness` | mg/L | *No strict limit* ($<200$) | Dissolved calcium and magnesium from mineral deposits. |
+| `Solids` | ppm | **$< 500\text{ to }1,000$** | Total Dissolved Solids (TDS); natural mineral aquifers can reach extreme levels. |
+| `Chloramines` | ppm | **Up to 4.0 ppm** | Chlorine-ammonia disinfectant added to kill pathogens. |
+| `Sulfate` | mg/L | **$< 250\text{ mg/L}$** | Natural dissolved rock minerals. High levels cause a bitter taste and laxative effects. |
+| `Conductivity` | $\mu$S/cm | **$< 400\ \mu\text{S/cm}$** | Electrical conductivity indicating dissolved ionic mineral content. |
+| `Organic_carbon` | ppm | **$< 2.0\text{ to }4.0$** | Total Organic Carbon from decaying vegetation. |
+| `Trihalomethanes` | $\mu$g/L | **$< 80\ \mu\text{g/L}$** | Chemical byproducts formed when chlorine reacts with organic matter. |
+| `Turbidity` | NTU | **$< 5.0\text{ NTU}$** | Cloudiness caused by suspended sediments. Clean water is crystal clear. |
+| `Potability` | Binary | `1` = Safe, `0` = Unsafe | Classification target. |
 
 ---
 
-## 🔍 The 4 Big Problems We Found & How We Fixed Them
+## 4. Summary Quality Audit Matrix
 
-### 1. Missing Values in ~39% of the Data
-* **Problem:** 1,265 out of 3,276 water samples had at least one missing chemical test (Sulfate is missing in 23.8%, pH in 15.0%, Trihalomethanes in 4.95%).
-* **Why not delete them?** Deleting 39% of the data would throw away more than one-third of our water samples!
-* **How we fixed it:** We filled missing numbers using the **median** of each group (Safe Water vs. Unsafe Water).
-
-### 2. Impossible pH Readings
-* **Problem:** Some sensors recorded pH values below 0 or above 14 due to broken probes.
-* **How we fixed it:** We replaced impossible readings with `NaN` and filled them using the group median.
-
-### 3. Extreme Mineral Spikes (Solids)
-* **Problem:** Total Dissolved Solids had values over 50,000 ppm.
-* **Why not use a standard cutoff?** Deep groundwater can naturally have 20,000 to 30,000 ppm of minerals. Standard boxplot rules would delete 47 valid mineral water samples.
-* **How we fixed it:** We used an **extreme cutoff ($3.0 \times \text{IQR}$)** to keep real mineral water while removing impossible spikes (> 57,000 ppm).
-
-### 4. Messy Decimals
-* **Problem:** Measurements had uneven decimal lengths.
-* **How we fixed it:** We rounded all continuous measurements to **3 decimal places** and made sure `Potability` is a clean integer (`0` or `1`).
+| Metric | Raw Dataset (Before) | Pipeline Action | Cleaned Dataset (After) | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **Sample Count** | 3,276 samples | Domain-informed filtering | **3,276 samples (100.0%)** | Preserved |
+| **Missing Values** | 1,434 missing entries | Class-conditional median imputation | **0 missing entries (0.0%)** | Resolved |
+| **pH Range** | Sensor errors outside $[0, 14]$ | Bounded $[0, 14]$ & imputed | Strictly within **$[0.00, 14.00]$** | Validated |
+| **Mineral Outliers (Solids)** | 47 flagged by $1.5\times\text{IQR}$ | Extreme fence ($3.0\times\text{IQR} = 62,331\text{ ppm}$) | **0 authentic samples deleted** | Preserved |
+| **Float Precision** | Inconsistent decimal places | Precision standardization | **Standardized 3 decimals** | Cleaned |
 
 ---
 
-## 📈 Before vs. After Cleaning Comparison
+## 5. Quickstart & Installation
 
-| Metric / Check | Raw Dataset (Before) | Cleaned Dataset (After) | Improvement |
-| :--- | :--- | :--- | :--- |
-| **Total Rows** | 3,276 | 3,276 | **100.0% Sample Retention** |
-| **Total Missing Values** | **1,434** | **0** | **100% Complete** |
-| **Missing Sulfate Rows** | 781 (23.84%) | 0 (0.00%) | Filled using group median |
-| **Missing pH Rows** | 491 (14.99%) | 0 (0.00%) | Filled using group median |
-| **Missing Trihalomethanes** | 162 (4.95%) | 0 (0.00%) | Filled using group median |
-| **Physical pH Range** | Bounded [0, 14] | Verified [0, 14] | Validated physical sensor limits |
-| **Max Solids (ppm)** | 61,227.20 ppm | 61,227.20 ppm | Preserved natural mineral water |
-| **Status** | 38.6% Incomplete | **100% Clean & Ready** | Ready for EDA & modeling |
+```bash
+# 1. Clone the repository
+git clone https://github.com/Troge-dev/Water-Potability-Data-Cleaning.git
+cd Water-Potability-Data-Cleaning
 
+# 2. Install dependencies
+pip install -r requirements.txt
 
----
-
-## 🎤 Simple Defense / Q&A Guide for Presentations
-
-1. **Q: Where does this dataset come from?**
-   * *A: The dataset is sourced from the [Kaggle Water Potability Dataset](https://www.kaggle.com/datasets/adityakadiwal/water-potability) by Aditya Kadiwal, containing 3,276 water samples evaluated against World Health Organization (WHO) safety standards.*
-
-2. **Q: Why did you fill missing values instead of deleting rows?**
-   * *A: Almost 39% of our water samples had missing test results. If we deleted those rows, we would lose over one-third of our data. Filling them lets us keep all the data.*
-
-3. **Q: Why did you use the Median instead of the Mean?**
-   * *A: The average gets pulled by extreme spikes. The median finds the true middle number and represents normal water accurately.*
-
-4. **Q: Why did you fill missing values separately for Safe and Unsafe water?**
-   * *A: Safe drinking water and unsafe water naturally have different chemical levels. Grouping by Potability ensures we fill missing values with realistic numbers for each water type.*
-
-5. **Q: Why must pH be between 0 and 14?**
-   * *A: In nature, pH only exists between 0 and 14. Anything outside that range is a broken sensor reading.*
-
-6. **Q: Why didn't you delete all high Solids as outliers?**
-   * *A: Natural groundwater can legitimately have high minerals. Using a wider boundary ($3.0 \times \text{IQR}$) keeps real mineral water and only removes crazy sensor spikes.*
+# 3. Build and view the Jupyter Book locally
+jupyter-book build --html
+```
 
 ---
 
-## 🛠️ Project Structure
-
-* `presentation.ipynb` / `notebooks/presentation.ipynb`: The comprehensive presentation and submission notebook containing the complete data cleaning pipeline, visualizations, evaluations, and oral defense notes.
-* `docs/index.md`: Book overview, problem statement, and dataset attribution.
-* `docs/01_dataset_codebook.md`: Plain-English chemical codebook, dataset provenance, and WHO guidelines.
-* `docs/03_defense_guide.md`: Defense questions, data origin, and answers.
-* `data/raw/water_potability.csv`: The raw dataset sourced from the Kaggle repository.
-* `data/processed/water_potability_cleaned.csv`: The final cleaned dataset.
-* `myst.yml`: Configuration file for the interactive Jupyter Book.
-
-
----
-
-## 📚 References & Dataset Attribution
+## 6. References & Attribution
 
 1. **Dataset Source:** Kadiwal, Aditya. *Water Potability: Drinking Water Quality Dataset*. Available on Kaggle: [https://www.kaggle.com/datasets/adityakadiwal/water-potability](https://www.kaggle.com/datasets/adityakadiwal/water-potability).
-2. **Quality Guidelines:** World Health Organization (WHO). *Guidelines for Drinking-water Quality (4th Edition)*, Geneva: WHO.
-3. **Global Health Target:** United Nations Sustainable Development Goal 6 (UN SDG 6): *Ensure availability and sustainable management of water and sanitation for all*.
-
-
+2. **International Benchmark:** World Health Organization (WHO). *Guidelines for Drinking-water Quality (4th Edition)*, Geneva: World Health Organization.
+3. **Sustainable Development Goals:** UN SDG 6: Clean Water and Sanitation.

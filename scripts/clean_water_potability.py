@@ -8,10 +8,18 @@ Course: DS311 - Exploratory Data Analysis
 
 import pandas as pd
 import numpy as np
+from pathlib import Path
 
-def clean_water_dataset(input_csv="water_potability.csv", output_csv="water_potability_cleaned.csv"):
-    print(f"Loading raw dataset from '{input_csv}'...")
-    df = pd.read_csv(input_csv)
+BASE_DIR = Path(__file__).resolve().parent.parent
+DEFAULT_INPUT_CSV = BASE_DIR / "data" / "raw" / "water_potability.csv"
+DEFAULT_OUTPUT_CSV = BASE_DIR / "data" / "processed" / "water_potability_cleaned.csv"
+
+def clean_water_dataset(input_csv=None, output_csv=None):
+    input_path = Path(input_csv) if input_csv else DEFAULT_INPUT_CSV
+    output_path = Path(output_csv) if output_csv else DEFAULT_OUTPUT_CSV
+    
+    print(f"Loading raw dataset from '{input_path}'...")
+    df = pd.read_csv(input_path)
     print(f"Initial dimensions: {df.shape[0]:,} rows, {df.shape[1]} columns")
     
     # 1. Audit and drop duplicate records
@@ -66,8 +74,9 @@ def clean_water_dataset(input_csv="water_potability.csv", output_csv="water_pota
     assert df.duplicated().sum() == 0, "Assertion Error: Duplicates detected!"
 
     # 7. Export Cleaned Dataset
-    df.to_csv(output_csv, index=False)
-    print(f"Data cleaning pipeline completed. Exported to '{output_csv}'.")
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    df.to_csv(output_path, index=False)
+    print(f"Data cleaning pipeline completed. Exported to '{output_path}'.")
     print(f"Final shape: {df.shape[0]:,} rows, {df.shape[1]} columns. Total missing: 0.")
     return df
 

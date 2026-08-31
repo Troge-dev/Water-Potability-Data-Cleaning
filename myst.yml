@@ -1,0 +1,28 @@
+version: 1
+project:
+  id: water-potability-data-cleaning
+  title: "Water Potability: Data Cleaning Pipeline"
+  subtitle: "Laboratory Activity 1 - Chemical Safety & Quality Assessment"
+  description: "A comprehensive, domain-informed data cleaning and auditing pipeline for water potability assessment aligned with WHO standards."
+  authors:
+    - name: "DS311 - Exploratory Data Analysis"
+  github: "https://github.com/Troge-dev/Water-Potability-Data-Cleaning"
+  keywords:
+    - "water potability"
+    - "data cleaning"
+    - "WHO guidelines"
+    - "exploratory data analysis"
+    - "public health"
+  toc:
+    - file: docs/index.md
+    - file: docs/01_dataset_codebook.md
+    - file: notebooks/water_potability_data_cleaning.ipynb
+    - file: docs/03_defense_guide.md
+
+site:
+  template: book-theme
+  options:
+    logo_text: "Water Quality Lab"
+    nav:
+      - title: "Repository"
+        url: "https://github.com/Troge-dev/Water-Potability-Data-Cleaning"

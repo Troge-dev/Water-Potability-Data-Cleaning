@@ -1,4 +1,4 @@
-﻿# Jupyter Notebooks
+# Jupyter Notebooks
 .ipynb_checkpoints/
 */.ipynb_checkpoints/*
 
@@ -17,3 +17,8 @@ ENV/
 .DS_Store
 Thumbs.db
 desktop.ini
+
+# Jupyter Book / MyST MD Build Artifacts
+_build/
+.myst/
+

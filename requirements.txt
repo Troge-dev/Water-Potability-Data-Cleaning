@@ -1,0 +1,14 @@
+﻿# Water Potability Data Cleaning Pipeline & Documentation
+# Laboratory Activity 1 - DS311 Exploratory Data Analysis
+
+# Core Data Science & Analysis
+pandas>=2.0.0
+numpy>=1.24.0
+
+# Visualization & Missingness Analysis
+matplotlib>=3.7.0
+seaborn>=0.12.0
+missingno>=0.5.2
+
+# Interactive Documentation & Publishing
+jupyter-book>=2.1.0

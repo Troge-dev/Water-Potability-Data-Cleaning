@@ -51,7 +51,8 @@ Access to safe drinking water is threatened by natural mineral runoff and chemic
 
 * **Dataset Title (Kaggle):** Water Quality / Water Potability
 * **Dataset Creator:** Aditya Kadiwal
-* **Primary File:** `water_potability.csv` (Located in this project directory)
+* **Primary File:** [`data/raw/water_potability.csv`](data/raw/water_potability.csv)
+* **Cleaned Output:** [`data/processed/water_potability_cleaned.csv`](data/processed/water_potability_cleaned.csv)
 * **Dimensions:** 3,276 rows × 10 columns
 * **Target Variable:** `Potability` (Binary: 0 = Not Potable / Unsafe, 1 = Potable / Safe)
 
@@ -178,14 +179,39 @@ assert df.duplicated().sum() == 0, "Duplicate rows detected!"
 * **Action:** Export cleaned dataset to `water_potability_cleaned.csv`.
 * **Code:**
 ```python
-df.to_csv("water_potability_cleaned.csv", index=False)
+df.to_csv("data/processed/water_potability_cleaned.csv", index=False)
+```
+
+---
+
+## Project Repository Structure
+
+```
+water_potability/
+├── data/
+│   ├── raw/
+│   │   └── water_potability.csv                   # Original 3,276-row Kaggle dataset
+│   └── processed/
+│       └── water_potability_cleaned.csv           # Imputed, sanitized, ready-for-EDA dataset
+├── docs/
+│   ├── index.md                                   # Jupyter Book landing / overview page
+│   ├── 01_dataset_codebook.md                     # Dataset variables & WHO standards codebook
+│   └── 03_defense_guide.md                        # Technical oral defense & methodology Q&A
+├── notebooks/
+│   └── water_potability_data_cleaning.ipynb       # Interactive EDA & cleaning notebook
+├── scripts/
+│   └── clean_water_potability.py                  # Standalone Python ETL cleaning script
+├── .gitignore                                     # Git ignore rules (caches, build outputs)
+├── myst.yml                                       # Jupyter Book configuration & table of contents
+├── README.md                                      # Main repository documentation
+└── requirements.txt                               # Python dependencies
 ```
 
 ---
 
 ## Before vs. After Summary
 
-| Check / Metric | Raw Dataset (`water_potability.csv`) | Cleaned Dataset (`water_potability_cleaned.csv`) |
+| Check / Metric | Raw Dataset (`data/raw/water_potability.csv`) | Cleaned Dataset (`data/processed/water_potability_cleaned.csv`) |
 | :--- | :--- | :--- |
 | **Total Rows** | 3,276 rows | 3,276 rows (100% sample retention) |
 | **Missing `Sulfate` Values** | 781 nulls (23.84%) | 0 nulls (Filled via class median) |
@@ -200,19 +226,35 @@ df.to_csv("water_potability_cleaned.csv", index=False)
 
 ---
 
-## How to Run the Cleaning Pipeline
+## How to Run the Project
 
-### Prerequisites
-* Python 3.8+
-* pandas, numpy, matplotlib, seaborn, missingno
-
-Install requirements:
+### 1. Environment Setup
+Install required Python dependencies from [`requirements.txt`](requirements.txt):
 ```bash
-pip install pandas numpy matplotlib seaborn missingno
+pip install -r requirements.txt
 ```
 
-### Execution
-* **Interactive Notebook:** Open and run [`water_potability_data_cleaning.ipynb`](water_potability_data_cleaning.ipynb) in Jupyter Notebook / VS Code / Google Colab for the step-by-step interactive pipeline, visualizations, and domain quality audit.
+### 2. Run the Automated Cleaning Script
+Execute the standalone pipeline script to generate the cleaned dataset:
+```bash
+python scripts/clean_water_potability.py
+```
+
+### 3. Run the Interactive Notebook
+Open and execute the analysis notebook in VS Code, JupyterLab, or Google Colab:
+```bash
+jupyter notebook notebooks/water_potability_data_cleaning.ipynb
+```
+
+### 4. Build & Preview the Jupyter Book
+Build the interactive documentation website locally:
+```bash
+# Build static HTML site
+jupyter-book build --html
+
+# Or start live preview server with hot reloading
+jupyter-book start
+```
 
 ---
 

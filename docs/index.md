@@ -63,8 +63,9 @@ Preparing data involves four easy-to-understand steps:
 Use the left sidebar or links below to explore the project:
 
 1. **[Dataset Profile & Simple Codebook](01_dataset_codebook.md):** What each of the 9 water measurements means in plain English and the World Health Organization (WHO) safe limits.
-2. **[Data Cleaning Presentation Notebook](../notebooks/presentation.ipynb):** The comprehensive Python presentation notebook showing every cleaning step, diagnostic charts, before-vs-after audit, and oral defense guides.
-3. **[Presentation & Defense Guide](03_defense_guide.md):** Simple, easy-to-remember answers to common questions for your presentation.
+2. **[Data Cleaning Pipeline Notebook](../notebooks/water_potability_data_cleaning.ipynb):** The end-to-end Python cleaning pipeline implementing physical boundary checks, class-conditional imputation, and IQR filtering.
+3. **[Interactive Presentation & Audit Notebook](../notebooks/presentation.ipynb):** The interactive presentation notebook featuring visual diagnostic charts, before-vs-after dashboards, and defense notes.
+4. **[Presentation & Defense Guide](03_defense_guide.md):** Simple, easy-to-remember answers to common questions for your presentation.
 
 
 ---

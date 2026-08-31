@@ -16,7 +16,6 @@ project:
   toc:
     - file: docs/index.md
     - file: docs/01_dataset_codebook.md
-    - file: notebooks/water_potability_data_cleaning.ipynb
     - file: notebooks/presentation.ipynb
     - file: docs/03_defense_guide.md
 

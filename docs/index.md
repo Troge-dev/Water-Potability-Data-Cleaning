@@ -1,64 +1,64 @@
-# Laboratory Activity 1: Data Cleaning Pipeline
-## Water Potability and Chemical Safety Assessment
+# Water Potability Data Cleaning Project
+## Simple & Clear Data Cleaning Guide for Drinking Water Safety
 
-```{admonition} Course & Project Information
+```{admonition} Quick Project Info
 :class: tip
-**Course:** DS311 - Exploratory Data Analysis  
-**Domain:** Environment & Public Health (Aligned with UN SDG 6: Clean Water and Sanitation)  
-**Primary Dataset:** `data/raw/water_potability.csv` (3,276 water samples × 10 features)  
-**Target Variable:** `Potability` (0 = Non-Potable / Unsafe, 1 = Potable / Safe)
+* **Course:** DS311 - Exploratory Data Analysis (EDA)
+* **Goal:** Clean a dataset of water test results so we can accurately check if water is safe to drink.
+* **Topic:** Environment & Public Health (Clean Water for Everyone - UN SDG 6)
+* **Dataset:** 3,276 water samples tested for 9 water quality measurements.
+* **Target:** `Potability` (1 = Safe to drink, 0 = Unsafe to drink)
 ```
 
 ---
 
-## 1. Project Overview
+## 1. What is this Project About?
 
-Clean drinking water is an indispensable prerequisite for human health, sanitation, and environmental sustainability. In environmental quality monitoring, laboratory and field sensors record continuous physical and chemical parameters—including **pH balance**, **mineral hardness**, **chloramine disinfection agents**, and **dissolved solids**—to assess whether a water source is safe for human consumption (`Potability = 1`) or poses chemical hazard (`Potability = 0`).
+Clean drinking water is necessary for everyone. When health and water agencies test water, they measure things like **acidity (pH)**, **chlorine levels**, **mineral hardness**, and **cloudiness**.
 
-However, real-world environmental datasets are prone to significant data quality defects:
-1. **Missing Chemical Assays:** Costly laboratory analyses (such as Sulfate and Trihalomethanes) are frequently omitted or incomplete across testing batches.
-2. **Sensor Calibration Artifacts:** Faulty telemetry probes can produce physically impossible measurements (e.g., pH values outside the fundamental $[0, 14]$ scale).
-3. **Extreme Mineral Concentration Variations:** Natural geochemical mineral variations vs. corrupt telemetry spikes must be carefully distinguished.
+However, real-world data from water sensors and lab tests is rarely perfect. It often has big problems:
+1. **Missing Numbers:** Some water samples were never tested for certain chemicals because lab tests are expensive.
+2. **Broken Sensors:** Water probes can break or get dirty, giving impossible readings (like a pH below 0 or above 14).
+3. **Extreme Numbers:** Some natural underground wells have huge amounts of minerals, while other spikes are just sensor glitches.
 
-This interactive Jupyter Book presents a **principled, domain-informed data cleaning pipeline** in Python and Pandas to audit, sanitize, impute, and validate water safety records in accordance with **World Health Organization (WHO)** standards.
+In this project, we built a step-by-step **Python cleaning pipeline** to fix these errors so the data is 100% clean, accurate, and ready for charts and analysis.
 
 ---
 
-## 2. Data Preparation Framework
+## 2. The 4 Stages of Data Preparation
 
-In data science workflows, data preparation is a structured, multi-stage discipline:
+Preparing data involves four easy-to-understand steps:
 
-| Stage | Objective | Implementation in this Lab |
+| Stage | What it Means (Simple) | What We Did in This Project |
 | :--- | :--- | :--- |
-| **Data Wrangling** | Ingesting, restructuring, and managing raw input streams into tabular structures. | End-to-end data ingestion, type standardization, and reproducible pipeline design. |
-| **Data Cleaning** | Identifying and resolving anomalies, missing values, duplicates, and boundary violations. | Sanitizing out-of-scale pH readings, class-conditional median imputation, and extreme IQR outlier pruning. |
-| **Data Transformation** | Modifying numeric representation and precision without altering underlying semantics. | Standardizing floating-point precision to 3 decimal places and integer target casting. |
-| **Feature Engineering** | Deriving domain-specific indicators to enrich predictive capability. | Preserving natural chemical interaction ratios for downstream classification models. |
+| **Data Wrangling** | Loading and organizing the data files. | Loading the raw CSV file and setting up our tools. |
+| **Data Cleaning** | Finding and fixing errors, missing numbers, and bad readings. | Fixing impossible pH numbers, filling missing values, and checking extreme spikes. |
+| **Data Transformation** | Cleaning up number formats without changing the facts. | Rounding long decimals to 3 places and making sure labels are clean. |
+| **Feature Engineering** | Creating new helpful columns (optional). | Preparing the cleaned data for future charts and machine learning models. |
 
-```{admonition} Core Guiding Principle
+```{admonition} Our Main Rule
 :class: important
-*"We do not modify or discard data simply because it appears atypical. We first audit the data, understand the underlying physicochemical phenomenon, and apply justified domain rules."*
+*"Never delete or change data just because it looks different. First understand what the numbers mean in real life, then apply smart rules."*
 ```
 
 ---
 
-## 3. Research Questions & Problem Statement
+## 3. The Main Problem We Are Solving
 
-### The Real-World Environmental Problem
-Access to safe drinking water is threatened by industrial runoff, inadequate sanitation, and chemical contamination. Public health authorities require trustworthy data to classify water potability, but missing assays and sensor probe errors introduce unacceptable misclassification risks.
+### The Real-World Question:
+> *How can we fix sensor errors and fill in missing chemical tests so we can accurately tell whether water is safe to drink?*
 
-### Primary Investigation Question
-> *How can we systematically detect, audit, and clean sensor probe anomalies, missing chemical tests, and mineral concentration outliers to ensure that water safety classification strictly adheres to World Health Organization (WHO) safety standards?*
-
-### Plain-Language Summary
-> *How can we fix sensor errors and fill in missing test data so we can accurately determine whether water is safe to drink?*
+### Why We Can't Just Delete Incomplete Data:
+* **Almost 39% of the water samples** (1,265 rows out of 3,276) have at least one missing chemical test.
+* If we delete those rows, we lose more than one-third of our data!
+* Instead of throwing away data, we use smart **median filling** based on whether the water is safe or unsafe.
 
 ---
 
-## 4. Book Structure & Navigation
+## 4. Book Chapters & Navigation
 
-This Jupyter Book is organized into the following chapters:
+Use the left sidebar or links below to explore the project:
 
-1. **[Dataset Profile & Codebook](01_dataset_codebook.md):** Detailed variable definitions, units of measurement, and WHO reference standards.
-2. **[Data Cleaning Pipeline](../notebooks/water_potability_data_cleaning.ipynb):** Interactive computational notebook executing the end-to-end ingestion, missingness visualization (`missingno`), pH boundary enforcement, class-conditional imputation, and verification.
-3. **[Presentation & Defense Guide](03_defense_guide.md):** Structured Q&A addressing methodological choices for oral lab defense and evaluation.
+1. **[Dataset Profile & Simple Codebook](01_dataset_codebook.md):** What each of the 9 water measurements means in plain English and the World Health Organization (WHO) safe limits.
+2. **[Data Cleaning Pipeline](../notebooks/water_potability_data_cleaning.ipynb):** The interactive Python notebook showing every cleaning step, charts, and before-vs-after comparisons.
+3. **[Presentation & Defense Guide](03_defense_guide.md):** Simple, easy-to-remember answers to common questions for your presentation.

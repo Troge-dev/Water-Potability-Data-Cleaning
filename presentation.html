@@ -8572,29 +8572,16 @@ memory usage: 256.1 KB
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=dd96b028">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=58ee44c2">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="%F0%9F%93%8A-Plot-Interpretation:-Target-Class-Distribution-(Potability)">📊 Plot Interpretation: Target Class Distribution (Potability)<a class="anchor-link" href="#%F0%9F%93%8A-Plot-Interpretation:-Target-Class-Distribution-(Potability)">¶</a></h3><blockquote>
-<p><strong>Key Takeaway:</strong> The dataset contains a moderate class imbalance, with <strong>61.0% unsafe water samples</strong> and <strong>39.0% safe drinking water samples</strong>.</p>
-</blockquote>
+<h3 id="Plot-Interpretation:-Target-Class-Distribution-(Potability)">Plot Interpretation: Target Class Distribution (Potability)<a class="anchor-link" href="#Plot-Interpretation:-Target-Class-Distribution-(Potability)">¶</a></h3><p><strong>Key Insight:</strong> The dataset exhibits a moderate class distribution of <strong>61.0% non-potable (1,998 samples)</strong> and <strong>39.0% potable (1,278 samples)</strong> water.</p>
 <ul>
-<li><strong>What the Charts Show:</strong><ul>
-<li><strong>Donut Chart (Left):</strong> 1,998 samples (61.0%) are classified as <strong>Non-Potable (0 / Unsafe)</strong>, while 1,278 samples (39.0%) are <strong>Potable (1 / Safe)</strong>.</li>
-<li><strong>Bar Chart (Right):</strong> Shows the count breakdown with exact numbers and percentages (~720 more non-potable samples than potable samples).</li>
-</ul>
-</li>
-<li><strong>Everyday Meaning &amp; Real-World Context:</strong><ul>
-<li>Real-world environmental water monitoring tests many natural, untreated, or compromised water sources, which is why non-potable samples outnumber clean drinking water samples.</li>
-</ul>
-</li>
-<li><strong>Why This Matters for Data Cleaning:</strong><ul>
-<li>Because safe water and unsafe water have distinct baseline chemical compositions, missing values should <strong>not</strong> be filled with a single overall dataset median. Instead, we must perform <strong>class-conditional group imputation</strong> (calculating medians separately for Potable and Non-Potable water).</li>
-</ul>
-</li>
+<li><strong>Distribution Breakdown:</strong> Unsafe water samples exceed safe drinking water samples by 720 records, reflecting field testing of untreated environmental water sources.</li>
+<li><strong>Analytical Impact:</strong> Due to systematic chemical differences between safe and unsafe water bodies, missing values must be imputed conditionally by class (<code>Potability</code>) rather than globally across the entire dataset.</li>
 </ul>
 </div>
 </div>
@@ -8712,30 +8699,16 @@ Verification Passed: Every water sample represents a distinct observation.
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=0d619277">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=d5720a65">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="%F0%9F%93%8A-Plot-Interpretation:-Missingness-Pattern-Matrix">📊 Plot Interpretation: Missingness Pattern Matrix<a class="anchor-link" href="#%F0%9F%93%8A-Plot-Interpretation:-Missingness-Pattern-Matrix">¶</a></h3><blockquote>
-<p><strong>Key Takeaway:</strong> Missing values are <strong>isolated to exactly 3 chemical indicators</strong> (<code>Sulfate</code>, <code>ph</code>, and <code>Trihalomethanes</code>), while the remaining 6 features are 100% complete.</p>
-</blockquote>
+<h3 id="Plot-Interpretation:-Missingness-Pattern-Matrix">Plot Interpretation: Missingness Pattern Matrix<a class="anchor-link" href="#Plot-Interpretation:-Missingness-Pattern-Matrix">¶</a></h3><p><strong>Key Insight:</strong> Missing values are confined to three specific chemical features: <code>Sulfate</code>, <code>ph</code>, and <code>Trihalomethanes</code>. The remaining six features are 100% complete.</p>
 <ul>
-<li><strong>What the Chart Shows:</strong><ul>
-<li>Each vertical column represents a measurement; solid blue areas indicate recorded data, while horizontal white lines represent missing tests.</li>
-<li><code>Hardness</code>, <code>Solids</code>, <code>Chloramines</code>, <code>Conductivity</code>, <code>Organic_carbon</code>, <code>Turbidity</code>, and <code>Potability</code> have <strong>zero missing values</strong> (completely solid blue columns).</li>
-<li>Missing entries are distributed randomly across rows rather than clustered in specific batches.</li>
-</ul>
-</li>
-<li><strong>Why Are Some Tests Missing in Real Life?</strong><ul>
-<li>Laboratory chemical assays for <code>Sulfate</code> and <code>Trihalomethanes</code> require expensive chromatography equipment, and field sensors for <code>ph</code> frequently need re-calibration.</li>
-</ul>
-</li>
-<li><strong>Why We Cannot Delete Missing Rows (<code>dropna()</code>):</strong><ul>
-<li>Because missing values are spread across different samples, simply deleting rows with any missing value would discard <strong>1,265 out of 3,276 water samples (38.6%)</strong>, which would throw away over one-third of our valuable data.</li>
-</ul>
-</li>
+<li><strong>Pattern Analysis:</strong> Missingness is distributed randomly across rows without block-level clustering.</li>
+<li><strong>Data Retention Rationale:</strong> Dropping incomplete records with <code>dropna()</code> would eliminate 1,265 rows (38.6% of the dataset). Imputation is necessary to preserve the remaining valid measurements for modeling.</li>
 </ul>
 </div>
 </div>
@@ -8807,27 +8780,16 @@ Verification Passed: Every water sample represents a distinct observation.
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=06926a32">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=cac4aaca">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="%F0%9F%93%8A-Plot-Interpretation:-Missing-Values-Breakdown">📊 Plot Interpretation: Missing Values Breakdown<a class="anchor-link" href="#%F0%9F%93%8A-Plot-Interpretation:-Missing-Values-Breakdown">¶</a></h3><blockquote>
-<p><strong>Key Takeaway:</strong> <strong><code>Sulfate</code> is the most incomplete feature</strong> (missing in nearly 1 out of 4 samples), followed by <code>ph</code> (~15%) and <code>Trihalomethanes</code> (~5%).</p>
-</blockquote>
+<h3 id="Plot-Interpretation:-Missing-Values-Breakdown">Plot Interpretation: Missing Values Breakdown<a class="anchor-link" href="#Plot-Interpretation:-Missing-Values-Breakdown">¶</a></h3><p><strong>Key Insight:</strong> <code>Sulfate</code> has the highest missing rate at <strong>23.84% (781 samples)</strong>, followed by <code>ph</code> at <strong>14.99% (491 samples)</strong> and <code>Trihalomethanes</code> at <strong>4.95% (162 samples)</strong>.</p>
 <ul>
-<li><strong>What the Chart Shows:</strong><ul>
-<li><strong><code>Sulfate</code>:</strong> Missing in <strong>781 samples (23.84%)</strong> — the largest data gap in the study.</li>
-<li><strong><code>ph</code>:</strong> Missing in <strong>491 samples (14.99%)</strong> — approximately 1 in 7 water tests lacked pH data.</li>
-<li><strong><code>Trihalomethanes</code>:</strong> Missing in <strong>162 samples (4.95%)</strong> — a minor data gap.</li>
-<li>All other 6 features have <strong>0.00% missing values</strong>.</li>
-</ul>
-</li>
-<li><strong>Impact on Cleaning Pipeline:</strong><ul>
-<li>A total of <strong>1,434 individual missing data points</strong> across 1,265 distinct water samples must be intelligently imputed using domain-informed group medians.</li>
-</ul>
-</li>
+<li><strong>Context:</strong> A total of 1,434 missing data points across 1,265 samples require domain-informed imputation.</li>
+<li><strong>Domain Explanation:</strong> Higher missingness in Sulfate and Trihalomethanes reflects the cost and complexity of laboratory chemical assays compared to standard physical sensor readings.</li>
 </ul>
 </div>
 </div>
@@ -8959,26 +8921,16 @@ Step 1 Complete: Physical bounds [0, 14] enforced on pH feature.
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=f48dcb38">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b8bec57f">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="%F0%9F%93%8A-Plot-Interpretation:-Feature-Distributions-Before-Imputation">📊 Plot Interpretation: Feature Distributions Before Imputation<a class="anchor-link" href="#%F0%9F%93%8A-Plot-Interpretation:-Feature-Distributions-Before-Imputation">¶</a></h3><blockquote>
-<p><strong>Key Takeaway:</strong> All three features display approximately symmetric, bell-shaped distributions across both potable (blue) and non-potable (red) water, with slight differences in location and outliers.</p>
-</blockquote>
+<h3 id="Plot-Interpretation:-Feature-Distributions-Before-Imputation">Plot Interpretation: Feature Distributions Before Imputation<a class="anchor-link" href="#Plot-Interpretation:-Feature-Distributions-Before-Imputation">¶</a></h3><p><strong>Key Insight:</strong> Features exhibit unimodal, approximately normal distributions across both potable and non-potable subsets, with isolated sensor anomalies in pH.</p>
 <ul>
-<li><strong>What the Charts Show:</strong><ul>
-<li><strong><code>ph</code> (Left):</strong> Centered around ~7.0 (neutral), but contains a small number of broken sensor readings extending beyond the physical 0–14 scale.</li>
-<li><strong><code>Sulfate</code> (Middle):</strong> Roughly normal distribution centered around ~333 mg/L with tails extending up to 480 mg/L.</li>
-<li><strong><code>Trihalomethanes</code> (Right):</strong> Symmetric bell curve centered around ~66 µg/L.</li>
-</ul>
-</li>
-<li><strong>Why Median Imputation is the Best Choice:</strong><ul>
-<li>For near-normal distributions with occasional extreme values or sensor glitches, the <strong>median</strong> is much more robust than the mean because it resists outlier distortion while preserving the central tendency of each water class.</li>
-</ul>
-</li>
+<li><strong>Distribution Profile:</strong> <code>ph</code> is centered around 7.0, <code>Sulfate</code> around 333 mg/L, and <code>Trihalomethanes</code> around 66 µg/L.</li>
+<li><strong>Imputation Selection:</strong> The median is selected as the primary imputation statistic because it is robust against outlier distortion in approximately symmetric distributions.</li>
 </ul>
 </div>
 </div>
@@ -9079,26 +9031,16 @@ Remaining Missing Values After Step 2: 0
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=7872fa72">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=5c5bc593">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="%F0%9F%93%8A-Plot-Interpretation:-Feature-Distributions-After-Imputation">📊 Plot Interpretation: Feature Distributions After Imputation<a class="anchor-link" href="#%F0%9F%93%8A-Plot-Interpretation:-Feature-Distributions-After-Imputation">¶</a></h3><blockquote>
-<p><strong>Key Takeaway:</strong> Imputation successfully achieved <strong>100% data completeness</strong> without distorting the natural shape, variance, or class separations of any feature.</p>
-</blockquote>
+<h3 id="Plot-Interpretation:-Feature-Distributions-After-Imputation">Plot Interpretation: Feature Distributions After Imputation<a class="anchor-link" href="#Plot-Interpretation:-Feature-Distributions-After-Imputation">¶</a></h3><p><strong>Key Insight:</strong> Class-conditional median imputation successfully achieved <strong>100% data completeness</strong> while preserving original distribution shapes and class variance.</p>
 <ul>
-<li><strong>What the Charts Show:</strong><ul>
-<li>The distribution curves (KDE smooth lines) maintain their natural bell shapes and smooth tails for both Potable (blue) and Non-Potable (red) classes.</li>
-<li>The height of the central bin increased proportionally to the number of imputed values, reflecting filled medians without shifting the distribution center.</li>
-</ul>
-</li>
-<li><strong>Audit Confirmation:</strong><ul>
-<li>Zero missing values remain in <code>ph</code>, <code>Sulfate</code>, or <code>Trihalomethanes</code>.</li>
-<li>The distinct physicochemical properties between safe and unsafe water were preserved by using class-conditional group medians.</li>
-</ul>
-</li>
+<li><strong>Verification:</strong> Density curves (KDE) closely match pre-imputation shapes with zero observed distribution skew.</li>
+<li><strong>Class Separation:</strong> Imputing within each potability group maintained the distinct baseline chemical characteristics of safe versus unsafe water.</li>
 </ul>
 </div>
 </div>
@@ -9190,27 +9132,16 @@ Remaining Missing Values After Step 2: 0
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=618dec71">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=37627dcc">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="%F0%9F%93%8A-Plot-Interpretation:-Total-Dissolved-Solids-Outlier-Boundaries">📊 Plot Interpretation: Total Dissolved Solids Outlier Boundaries<a class="anchor-link" href="#%F0%9F%93%8A-Plot-Interpretation:-Total-Dissolved-Solids-Outlier-Boundaries">¶</a></h3><blockquote>
-<p><strong>Key Takeaway:</strong> A standard boxplot rule ($1.5 \times \text{IQR}$) is overly aggressive and would delete 47 valid mineral water samples. An <strong>extreme cutoff ($3.0 \times \text{IQR}$)</strong> safely preserves natural groundwater while filtering out 28 true sensor glitches.</p>
-</blockquote>
+<h3 id="Plot-Interpretation:-Total-Dissolved-Solids-Outlier-Thresholds">Plot Interpretation: Total Dissolved Solids Outlier Thresholds<a class="anchor-link" href="#Plot-Interpretation:-Total-Dissolved-Solids-Outlier-Thresholds">¶</a></h3><p><strong>Key Insight:</strong> An <strong>extreme boundary cutoff of $3.0 \times \text{IQR}$ (57,403 ppm)</strong> safely isolates 28 sensor anomalies while retaining valid high-mineral natural water.</p>
 <ul>
-<li><strong>What the Chart Shows:</strong><ul>
-<li><strong>Box &amp; Whiskers (Light Blue):</strong> Represents the bulk of water samples, with the middle 50% (IQR) spanning from 15,667 ppm to 27,333 ppm.</li>
-<li><strong>Dashed Orange Line (1.5× IQR = 44,832 ppm):</strong> The standard statistical fence. It incorrectly flags 47 samples as outliers.</li>
-<li><strong>Solid Red Line (3.0× IQR = 57,403 ppm):</strong> The domain-informed extreme fence. It isolates 28 impossible high-range sensor glitches (&gt;57,400 ppm).</li>
-</ul>
-</li>
-<li><strong>Environmental Chemistry Context:</strong><ul>
-<li>Natural mineral springs and deep groundwater can naturally reach 20,000 to 45,000 ppm of dissolved minerals (TDS). Deleting those would eliminate legitimate environmental data.</li>
-<li>Pruning at the 3.0× IQR boundary ensures only genuine sensor saturation artifacts are removed, retaining <strong>99.1% of all water samples</strong>.</li>
-</ul>
-</li>
+<li><strong>Methodological Comparison:</strong> Standard boxplot fencing ($1.5 \times \text{IQR}$) would remove 47 legitimate mineral-rich groundwater samples.</li>
+<li><strong>Domain Justification:</strong> Natural deep groundwater can legitimately carry elevated dissolved mineral concentrations; applying the $3.0 \times \text{IQR}$ threshold preserves 99.1% of all water samples.</li>
 </ul>
 </div>
 </div>
@@ -9714,27 +9645,16 @@ Total Missing Values: 0
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=a8876891">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=7feecd94">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="%F0%9F%93%8A-Plot-Interpretation:-Multi-Panel-Quality-Audit-Dashboard">📊 Plot Interpretation: Multi-Panel Quality Audit Dashboard<a class="anchor-link" href="#%F0%9F%93%8A-Plot-Interpretation:-Multi-Panel-Quality-Audit-Dashboard">¶</a></h3><blockquote>
-<p><strong>Key Takeaway:</strong> The data cleaning pipeline achieved <strong>100% data completeness</strong> and <strong>removed extreme anomalies</strong> while preserving 99.1% of the original dataset.</p>
-</blockquote>
+<h3 id="Plot-Interpretation:-Quality-Audit-Dashboard">Plot Interpretation: Quality Audit Dashboard<a class="anchor-link" href="#Plot-Interpretation:-Quality-Audit-Dashboard">¶</a></h3><p><strong>Key Insight:</strong> The pipeline achieved complete data integrity, reducing missing values from <strong>1,434 to 0</strong> and retaining <strong>3,248 out of 3,276 records (99.1% retention rate)</strong>.</p>
 <ul>
-<li><strong>What the Charts Show:</strong><ul>
-<li><strong>Left Panel (Missing Values):</strong> Total missing entries dropped from <strong>1,434 to 0</strong>, transforming an incomplete dataset into a fully populated, modeling-ready table.</li>
-<li><strong>Right Panel (Solids Density Profile):</strong> The cleaned density curve (blue) aligns almost perfectly with the raw curve (red), confirming that the overall mineral distribution is unchanged while cleanly trimming the extreme tail (&gt;57,400 ppm).</li>
-</ul>
-</li>
-<li><strong>Summary Scorecard:</strong><ul>
-<li><strong>Total Rows Retained:</strong> 3,248 out of 3,276 samples (<strong>99.1% retention rate</strong>).</li>
-<li><strong>Missing Values Remaining:</strong> 0 across all 10 columns.</li>
-<li><strong>Physical Boundaries Enforced:</strong> pH strictly between 0 and 14; TDS capped at 57,403 ppm.</li>
-</ul>
-</li>
+<li><strong>Missingness Resolution:</strong> All 10 features are 100% populated.</li>
+<li><strong>Distribution Preservation:</strong> Pre- and post-cleaning density curves for Total Dissolved Solids align closely, confirming anomaly reduction without altering underlying data characteristics.</li>
 </ul>
 </div>
 </div>
@@ -9784,27 +9704,16 @@ Total Missing Values: 0
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=87e5cb29">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=69505d34">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="%F0%9F%93%8A-Plot-Interpretation:-Correlation-Matrix-Heatmap">📊 Plot Interpretation: Correlation Matrix Heatmap<a class="anchor-link" href="#%F0%9F%93%8A-Plot-Interpretation:-Correlation-Matrix-Heatmap">¶</a></h3><blockquote>
-<p><strong>Key Takeaway:</strong> All 9 water quality features exhibit <strong>very low linear correlation</strong> with each other and with <code>Potability</code> (coefficients between -0.03 and +0.03).</p>
-</blockquote>
+<h3 id="Plot-Interpretation:-Feature-Correlation-Matrix">Plot Interpretation: Feature Correlation Matrix<a class="anchor-link" href="#Plot-Interpretation:-Feature-Correlation-Matrix">¶</a></h3><p><strong>Key Insight:</strong> All 9 water quality metrics show <strong>very low linear correlation</strong> with each other and with <code>Potability</code> (coefficients ranging from -0.03 to +0.03).</p>
 <ul>
-<li><strong>What the Heatmap Shows:</strong><ul>
-<li>Correlation coefficients range from <strong>-0.03 to +0.03</strong> across all feature pairs.</li>
-<li>No two chemical indicators are redundant (no multicollinearity problems for machine learning).</li>
-</ul>
-</li>
-<li><strong>Everyday Public Health Meaning:</strong><ul>
-<li>Water potability is <strong>multivariate and complex</strong>: no single chemical test alone determines whether water is safe to drink.</li>
-<li>For example, water with an ideal pH (7.0) can still be toxic if chloramines or trihalomethanes exceed safety limits.</li>
-<li>Consequently, machine learning models (like Random Forests or Gradient Boosting) that capture non-linear multi-variable interactions are necessary to accurately predict water safety.</li>
-</ul>
-</li>
+<li><strong>Collinearity Status:</strong> Zero pairwise multicollinearity ensures independent feature contributions for downstream modeling.</li>
+<li><strong>Domain Finding:</strong> Water safety is inherently multivariate; no individual chemical metric serves as a single determining threshold for potability.</li>
 </ul>
 </div>
 </div>

@@ -2,7 +2,7 @@
 # Water Potability and Drinking Water Safety Assessment
 
 [![Jupyter Book](https://img.shields.io/badge/Jupyter%20Book-Interactive%20Site-blue)](https://troge-dev.github.io/Water-Potability-Data-Cleaning/)
-[![Dataset](https://img.shields.io/badge/Dataset-Kaggle%20Water%20Quality-green)](data/raw/water_potability.csv)
+[![Dataset](https://img.shields.io/badge/Dataset-Kaggle%20Water%20Quality-green)](https://www.kaggle.com/datasets/adityakadiwal/water-potability)
 [![UN SDG 6](https://img.shields.io/badge/UN%20SDG%206-Clean%20Water%20%26%20Sanitation-orange)](https://sdgs.un.org/goals/goal6)
 
 ---
@@ -42,7 +42,9 @@ In this project, we built a **step-by-step Python cleaning pipeline** to fix the
 
 ## 🧪 Dataset Details & Simple Water Guide
 
-* **Dataset Source:** Kaggle (`water_potability.csv`) by Aditya Kadiwal
+* **Dataset Source:** [Water Potability Dataset on Kaggle](https://www.kaggle.com/datasets/adityakadiwal/water-potability) by Aditya Kadiwal
+* **Filename:** `water_potability.csv` (Raw), `water_potability_cleaned.csv` (Processed)
+* **Dataset Scope:** 3,276 water samples collected across various water bodies, evaluating 9 physicochemical metrics against WHO drinking standards.
 * **Size:** 3,276 water samples × 10 columns
 * **Target:** `Potability` (`1` = Safe to drink, `0` = Unsafe to drink)
 
@@ -102,19 +104,22 @@ In this project, we built a **step-by-step Python cleaning pipeline** to fix the
 
 ## 🎤 Simple Defense / Q&A Guide for Presentations
 
-1. **Q: Why did you fill missing values instead of deleting rows?**
+1. **Q: Where does this dataset come from?**
+   * *A: The dataset is sourced from the [Kaggle Water Potability Dataset](https://www.kaggle.com/datasets/adityakadiwal/water-potability) by Aditya Kadiwal, containing 3,276 water samples evaluated against World Health Organization (WHO) safety standards.*
+
+2. **Q: Why did you fill missing values instead of deleting rows?**
    * *A: Almost 39% of our water samples had missing test results. If we deleted those rows, we would lose over one-third of our data. Filling them lets us keep all the data.*
 
-2. **Q: Why did you use the Median instead of the Mean?**
+3. **Q: Why did you use the Median instead of the Mean?**
    * *A: The average gets pulled by extreme spikes. The median finds the true middle number and represents normal water accurately.*
 
-3. **Q: Why did you fill missing values separately for Safe and Unsafe water?**
+4. **Q: Why did you fill missing values separately for Safe and Unsafe water?**
    * *A: Safe drinking water and unsafe water naturally have different chemical levels. Grouping by Potability ensures we fill missing values with realistic numbers for each water type.*
 
-4. **Q: Why must pH be between 0 and 14?**
+5. **Q: Why must pH be between 0 and 14?**
    * *A: In nature, pH only exists between 0 and 14. Anything outside that range is a broken sensor reading.*
 
-5. **Q: Why didn't you delete all high Solids as outliers?**
+6. **Q: Why didn't you delete all high Solids as outliers?**
    * *A: Natural groundwater can legitimately have high minerals. Using a wider boundary ($3.0 \times \text{IQR}$) keeps real mineral water and only removes crazy sensor spikes.*
 
 ---
@@ -122,10 +127,19 @@ In this project, we built a **step-by-step Python cleaning pipeline** to fix the
 ## 🛠️ Project Structure
 
 * `notebooks/water_potability_data_cleaning.ipynb`: The main notebook for submission containing the complete data cleaning process.
-* `docs/index.md`: Book overview and problem statement.
-* `docs/01_dataset_codebook.md`: Plain-English chemical codebook and WHO guidelines.
-* `docs/03_defense_guide.md`: Defense questions and answers.
-* `data/raw/water_potability.csv`: The raw dataset.
+* `docs/index.md`: Book overview, problem statement, and dataset attribution.
+* `docs/01_dataset_codebook.md`: Plain-English chemical codebook, dataset provenance, and WHO guidelines.
+* `docs/03_defense_guide.md`: Defense questions, data origin, and answers.
+* `data/raw/water_potability.csv`: The raw dataset sourced from the Kaggle repository.
 * `data/processed/water_potability_cleaned.csv`: The final cleaned dataset.
 * `myst.yml`: Configuration file for the interactive Jupyter Book.
+
+---
+
+## 📚 References & Dataset Attribution
+
+1. **Dataset Source:** Kadiwal, Aditya. *Water Potability: Drinking Water Quality Dataset*. Available on Kaggle: [https://www.kaggle.com/datasets/adityakadiwal/water-potability](https://www.kaggle.com/datasets/adityakadiwal/water-potability).
+2. **Quality Guidelines:** World Health Organization (WHO). *Guidelines for Drinking-water Quality (4th Edition)*, Geneva: WHO.
+3. **Global Health Target:** United Nations Sustainable Development Goal 6 (UN SDG 6): *Ensure availability and sustainable management of water and sanitation for all*.
+
 

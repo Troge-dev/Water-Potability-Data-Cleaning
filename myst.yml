@@ -26,3 +26,6 @@ site:
     nav:
       - title: "Repository"
         url: "https://github.com/Troge-dev/Water-Potability-Data-Cleaning"
+      - title: "Dataset Source (Kaggle)"
+        url: "https://www.kaggle.com/datasets/adityakadiwal/water-potability"
+

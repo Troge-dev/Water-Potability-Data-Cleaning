@@ -6,7 +6,8 @@
 * **Course:** DS311 - Exploratory Data Analysis (EDA)
 * **Goal:** Clean a dataset of water test results so we can accurately check if water is safe to drink.
 * **Topic:** Environment & Public Health (Clean Water for Everyone - UN SDG 6)
-* **Dataset:** 3,276 water samples tested for 9 water quality measurements.
+* **Dataset Source:** [Water Potability Dataset on Kaggle](https://www.kaggle.com/datasets/adityakadiwal/water-potability) by Aditya Kadiwal
+* **Dataset Size:** 3,276 water samples tested for 9 water quality measurements.
 * **Target:** `Potability` (1 = Safe to drink, 0 = Unsafe to drink)
 ```
 
@@ -15,6 +16,8 @@
 ## 1. What is this Project About?
 
 Clean drinking water is necessary for everyone. When health and water agencies test water, they measure things like **acidity (pH)**, **chlorine levels**, **mineral hardness**, and **cloudiness**.
+
+In this project, we analyze the [Kaggle Water Potability Dataset](https://www.kaggle.com/datasets/adityakadiwal/water-potability) created by Aditya Kadiwal, which contains real-world physicochemical metrics from 3,276 water bodies benchmarked against World Health Organization (WHO) safety standards.
 
 However, real-world data from water sensors and lab tests is rarely perfect. It often has big problems:
 1. **Missing Numbers:** Some water samples were never tested for certain chemicals because lab tests are expensive.
@@ -31,7 +34,7 @@ Preparing data involves four easy-to-understand steps:
 
 | Stage | What it Means (Simple) | What We Did in This Project |
 | :--- | :--- | :--- |
-| **Data Wrangling** | Loading and organizing the data files. | Loading the raw CSV file and setting up our tools. |
+| **Data Wrangling** | Loading and organizing the data files. | Loading the raw CSV file (`water_potability.csv`) and setting up our tools. |
 | **Data Cleaning** | Finding and fixing errors, missing numbers, and bad readings. | Fixing impossible pH numbers, filling missing values, and checking extreme spikes. |
 | **Data Transformation** | Cleaning up number formats without changing the facts. | Rounding long decimals to 3 places and making sure labels are clean. |
 | **Feature Engineering** | Creating new helpful columns (optional). | Preparing the cleaned data for future charts and machine learning models. |
@@ -62,3 +65,11 @@ Use the left sidebar or links below to explore the project:
 1. **[Dataset Profile & Simple Codebook](01_dataset_codebook.md):** What each of the 9 water measurements means in plain English and the World Health Organization (WHO) safe limits.
 2. **[Data Cleaning Pipeline](../notebooks/water_potability_data_cleaning.ipynb):** The interactive Python notebook showing every cleaning step, charts, and before-vs-after comparisons.
 3. **[Presentation & Defense Guide](03_defense_guide.md):** Simple, easy-to-remember answers to common questions for your presentation.
+
+---
+
+## 📚 References & Attribution
+
+* **Primary Dataset:** Kadiwal, Aditya. *Water Potability Dataset*. Hosted on Kaggle: [https://www.kaggle.com/datasets/adityakadiwal/water-potability](https://www.kaggle.com/datasets/adityakadiwal/water-potability).
+* **International Standards:** World Health Organization (WHO). *Guidelines for Drinking-water Quality (4th Edition)*.
+

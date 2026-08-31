@@ -4,7 +4,20 @@ This guide gives you simple, easy-to-explain answers for your presentation. You 
 
 ---
 
-### Question 1: Why did you fill in missing values instead of deleting rows?
+### Question 1: Where does this dataset come from and what does it measure?
+
+```{admonition} Simple Answer
+:class: tip
+**"It is the Kaggle Water Potability Dataset by Aditya Kadiwal, measuring 3,276 water samples against WHO drinking safety limits."**
+```
+
+* **Dataset Origin:** Sourced from the public [Water Potability Dataset on Kaggle](https://www.kaggle.com/datasets/adityakadiwal/water-potability) created by Aditya Kadiwal.
+* **Content:** 3,276 water samples collected from diverse water bodies (wells, taps, lakes, facilities) with 9 chemical/physical indicators and 1 binary label (`Potability`: 1 = Safe, 0 = Unsafe).
+* **Evaluation Standards:** Chemical limits are based on World Health Organization (WHO) Guidelines for Drinking-water Quality.
+
+---
+
+### Question 2: Why did you fill in missing values instead of deleting rows?
 
 ```{admonition} Simple Answer
 :class: tip
@@ -17,7 +30,7 @@ This guide gives you simple, easy-to-explain answers for your presentation. You 
 
 ---
 
-### Question 2: Why did you use the Median instead of the Mean (Average)?
+### Question 3: Why did you use the Median instead of the Mean (Average)?
 
 ```{admonition} Simple Answer
 :class: tip
@@ -29,7 +42,7 @@ This guide gives you simple, easy-to-explain answers for your presentation. You 
 
 ---
 
-### Question 3: Why did you fill missing values separately for Safe Water and Unsafe Water?
+### Question 4: Why did you fill missing values separately for Safe Water and Unsafe Water?
 
 ```{admonition} Simple Answer
 :class: tip
@@ -41,7 +54,7 @@ This guide gives you simple, easy-to-explain answers for your presentation. You 
 
 ---
 
-### Question 4: Why did you check that pH is between 0 and 14?
+### Question 5: Why did you check that pH is between 0 and 14?
 
 ```{admonition} Simple Answer
 :class: tip
@@ -53,7 +66,7 @@ This guide gives you simple, easy-to-explain answers for your presentation. You 
 
 ---
 
-### Question 5: Why didn't you delete all high mineral levels (Solids) as outliers?
+### Question 6: Why didn't you delete all high mineral levels (Solids) as outliers?
 
 ```{admonition} Simple Answer
 :class: tip
@@ -67,8 +80,9 @@ This guide gives you simple, easy-to-explain answers for your presentation. You 
 ---
 
 ### Summary Checklist to Remember for Presentation:
-1. **Goal:** Fix bad sensor readings and fill missing numbers so we know if water is safe to drink.
-2. **Dataset:** 3,276 water samples with 9 water quality measurements.
+1. **Source & Origin:** [Kaggle Water Potability Dataset](https://www.kaggle.com/datasets/adityakadiwal/water-potability) by Aditya Kadiwal (3,276 water samples, 9 water quality features + 1 target).
+2. **Goal:** Fix bad sensor readings and fill missing numbers so we know if water is safe to drink.
 3. **Biggest Problem:** ~39% of water samples had missing test results.
 4. **Main Action:** Filled missing numbers using group medians, fixed impossible pH values, and removed extreme sensor spikes.
 5. **Final Result:** 100% clean dataset with zero missing values, ready for analysis and charts!
+

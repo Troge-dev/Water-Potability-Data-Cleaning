@@ -3,8 +3,12 @@
 ## 1. What is this Dataset?
 
 * **Dataset Name:** Water Potability (Drinking Water Safety)
+* **Dataset Source:** [Water Potability Dataset on Kaggle](https://www.kaggle.com/datasets/adityakadiwal/water-potability)
+* **Creator / Publisher:** Aditya Kadiwal
+* **Raw Filename:** `water_potability.csv` (Located in `data/raw/`)
+* **Cleaned Filename:** `water_potability_cleaned.csv` (Located in `data/processed/`)
 * **What it contains:** 3,276 water samples collected from different water bodies (wells, lakes, taps, and treatment facilities).
-* **What each row represents:** One water sample tested for 9 different water quality measurements.
+* **What each row represents:** One water sample tested for 9 different water quality measurements evaluated against World Health Organization (WHO) water quality criteria.
 * **The Main Goal / Target:** `Potability`
   * `1` = **Safe to drink** (Potable)
   * `0` = **Unsafe to drink** (Non-potable / Contaminated)
@@ -43,3 +47,12 @@ Before we can use this data, we found 4 major issues that needed fixing:
    * Total Dissolved Solids had extreme spikes above 50,000 ppm.
 4. **Messy Decimals:**
    * Numbers had too many uneven decimal places and needed rounding.
+
+---
+
+## 📚 References & Dataset Attribution
+
+1. **Kaggle Source:** Kadiwal, Aditya. *Water Potability: Drinking Water Quality Dataset*. Available on Kaggle: [https://www.kaggle.com/datasets/adityakadiwal/water-potability](https://www.kaggle.com/datasets/adityakadiwal/water-potability).
+2. **Benchmark Standards:** World Health Organization (WHO). *Guidelines for Drinking-water Quality (4th Edition)*, Geneva: WHO.
+3. **Sustainable Development Goal:** UN SDG 6: Clean Water and Sanitation.
+

@@ -7796,17 +7796,17 @@ a.anchor-link {
 <!-- End of mermaid configuration --></head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
 <main>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=90e43bc3">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=d3e52f74">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="%F0%9F%9A%B0-Laboratory-Activity-1:-Data-Cleaning-Pipeline">🚰 Laboratory Activity 1: Data Cleaning Pipeline<a class="anchor-link" href="#%F0%9F%9A%B0-Laboratory-Activity-1:-Data-Cleaning-Pipeline">¶</a></h1><h2 id="Water-Potability-and-Chemical-Safety-Assessment">Water Potability and Chemical Safety Assessment<a class="anchor-link" href="#Water-Potability-and-Chemical-Safety-Assessment">¶</a></h2><h3 id="Exploratory-Data-Analysis-&amp;-Quality-Assurance-Pipeline">Exploratory Data Analysis &amp; Quality Assurance Pipeline<a class="anchor-link" href="#Exploratory-Data-Analysis-&amp;-Quality-Assurance-Pipeline">¶</a></h3><p><a href="https://troge-dev.github.io/Water-Potability-Data-Cleaning/"><img alt="Jupyter Book" src="https://img.shields.io/badge/Jupyter%20Book-Interactive%20Site-blue"/></a>
+<h1 id="Laboratory-Activity-1:-Data-Cleaning-Pipeline">Laboratory Activity 1: Data Cleaning Pipeline<a class="anchor-link" href="#Laboratory-Activity-1:-Data-Cleaning-Pipeline">¶</a></h1><h2 id="Water-Potability-and-Chemical-Safety-Assessment">Water Potability and Chemical Safety Assessment<a class="anchor-link" href="#Water-Potability-and-Chemical-Safety-Assessment">¶</a></h2><h3 id="Exploratory-Data-Analysis-&amp;-Quality-Assurance-Pipeline">Exploratory Data Analysis &amp; Quality Assurance Pipeline<a class="anchor-link" href="#Exploratory-Data-Analysis-&amp;-Quality-Assurance-Pipeline">¶</a></h3><p><a href="https://troge-dev.github.io/Water-Potability-Data-Cleaning/"><img alt="Jupyter Book" src="https://img.shields.io/badge/Jupyter%20Book-Interactive%20Site-blue"/></a>
 <a href="https://www.kaggle.com/datasets/adityakadiwal/water-potability"><img alt="Dataset Source" src="https://img.shields.io/badge/Dataset-Kaggle%20Water%20Potability-green"/></a>
 <a href="https://sdgs.un.org/goals/goal6"><img alt="UN SDG 6" src="https://img.shields.io/badge/UN%20SDG%206-Clean%20Water%20%26%20Sanitation-orange"/></a></p>
 <hr/>
-<h3 id="%F0%9F%93%8B-Project-Metadata">📋 Project Metadata<a class="anchor-link" href="#%F0%9F%93%8B-Project-Metadata">¶</a></h3><ul>
+<h3 id="Project-Metadata">Project Metadata<a class="anchor-link" href="#Project-Metadata">¶</a></h3><ul>
 <li><strong>Course:</strong> DS311 - Exploratory Data Analysis (EDA)</li>
 <li><strong>Domain:</strong> Environmental Engineering &amp; Public Health (Clean Drinking Water Safety)</li>
 <li><strong>Dataset Source:</strong> <a href="https://www.kaggle.com/datasets/adityakadiwal/water-potability">Water Potability Dataset on Kaggle</a> by Aditya Kadiwal</li>
@@ -7815,17 +7815,17 @@ a.anchor-link {
 <li><strong>Evaluation Standards:</strong> World Health Organization (WHO) Guidelines for Drinking-water Quality (4th Edition)</li>
 </ul>
 <hr/>
-<h3 id="%F0%9F%8E%AF-Core-Investigation-Question">🎯 Core Investigation Question<a class="anchor-link" href="#%F0%9F%8E%AF-Core-Investigation-Question">¶</a></h3><blockquote>
+<h3 id="Core-Investigation-Question">Core Investigation Question<a class="anchor-link" href="#Core-Investigation-Question">¶</a></h3><blockquote>
 <p><strong>"How can we systematically detect, audit, and clean sensor probe anomalies, missing chemical measurements, and mineral concentration outliers to accurately determine whether water is safe to drink based on World Health Organization (WHO) standards?"</strong></p>
 </blockquote>
-<h3 id="%F0%9F%92%A1-Core-Engineering-Rule">💡 Core Engineering Rule<a class="anchor-link" href="#%F0%9F%92%A1-Core-Engineering-Rule">¶</a></h3><blockquote>
+<h3 id="Core-Engineering-Rule">Core Engineering Rule<a class="anchor-link" href="#Core-Engineering-Rule">¶</a></h3><blockquote>
 <p><em>"Never delete or modify data simply because it looks different. First understand the underlying real-world water chemistry and physical sensor mechanisms, then apply domain-justified rules."</em></p>
 </blockquote>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=7f7cef9a">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ecdbf987">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7913,9 +7913,9 @@ a.anchor-link {
 <tr>
 <td style="text-align:left"><code>Conductivity</code></td>
 <td style="text-align:left"><code>float64</code></td>
-<td style="text-align:left">$\mu	ext{S/cm}$</td>
+<td style="text-align:left">$\mu\text{S/cm}$</td>
 <td style="text-align:left">Electrical conductance from dissolved ions</td>
-<td style="text-align:left"><strong>$\le$ 400 $\mu	ext{S/cm}$</strong> typical for clean freshwater</td>
+<td style="text-align:left"><strong>$\le$ 400 $\mu\text{S/cm}$</strong> typical for clean freshwater</td>
 </tr>
 <tr>
 <td style="text-align:left"><code>Organic_carbon</code></td>
@@ -7927,9 +7927,9 @@ a.anchor-link {
 <tr>
 <td style="text-align:left"><code>Trihalomethanes</code></td>
 <td style="text-align:left"><code>float64</code></td>
-<td style="text-align:left">$\mu	ext{g/L}$</td>
+<td style="text-align:left">$\mu\text{g/L}$</td>
 <td style="text-align:left">Chemical byproducts from chlorine disinfection</td>
-<td style="text-align:left"><strong>$\le$ 80 $\mu	ext{g/L}$</strong> (Regulated disinfectant byproduct standard)</td>
+<td style="text-align:left"><strong>$\le$ 80 $\mu\text{g/L}$</strong> (Regulated disinfectant byproduct standard)</td>
 </tr>
 <tr>
 <td style="text-align:left"><code>Turbidity</code></td>
@@ -7951,7 +7951,7 @@ a.anchor-link {
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=6cdd076d">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ee3b2f4f">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7967,7 +7967,7 @@ a.anchor-link {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=5a2604db">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=9c45af13">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8031,7 +8031,7 @@ a.anchor-link {
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=1b131618">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b3301b5f">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8042,7 +8042,7 @@ a.anchor-link {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=c868d985">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=2eb8161e">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8200,7 +8200,7 @@ Total Columns:     10
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c08ce3a4">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=6c9a8c3b">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8210,7 +8210,7 @@ Total Columns:     10
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=fa798508">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=4546e423">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8255,7 +8255,7 @@ memory usage: 256.1 KB
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=6360ce19">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b9b233f4">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8265,7 +8265,7 @@ memory usage: 256.1 KB
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=5abc1d4d">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=75f504e7">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8305,180 +8305,180 @@ memory usage: 256.1 KB
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[4]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <style type="text/css">
-#T_4138c_row0_col10 {
+#T_a5a07_row0_col10 {
   background-color: #ee3a2c;
   color: #f1f1f1;
 }
-#T_4138c_row1_col10, #T_4138c_row2_col10, #T_4138c_row3_col10, #T_4138c_row5_col10, #T_4138c_row6_col10, #T_4138c_row8_col10, #T_4138c_row9_col10 {
+#T_a5a07_row1_col10, #T_a5a07_row2_col10, #T_a5a07_row3_col10, #T_a5a07_row5_col10, #T_a5a07_row6_col10, #T_a5a07_row8_col10, #T_a5a07_row9_col10 {
   background-color: #fff5f0;
   color: #000000;
 }
-#T_4138c_row4_col10 {
+#T_a5a07_row4_col10 {
   background-color: #67000d;
   color: #f1f1f1;
 }
-#T_4138c_row7_col10 {
+#T_a5a07_row7_col10 {
   background-color: #fdc7b2;
   color: #000000;
 }
 </style>
-<table id="T_4138c">
+<table id="T_a5a07">
 <thead>
 <tr>
 <th class="blank level0"> </th>
-<th class="col_heading level0 col0" id="T_4138c_level0_col0">count</th>
-<th class="col_heading level0 col1" id="T_4138c_level0_col1">mean</th>
-<th class="col_heading level0 col2" id="T_4138c_level0_col2">std</th>
-<th class="col_heading level0 col3" id="T_4138c_level0_col3">min</th>
-<th class="col_heading level0 col4" id="T_4138c_level0_col4">25%</th>
-<th class="col_heading level0 col5" id="T_4138c_level0_col5">50%</th>
-<th class="col_heading level0 col6" id="T_4138c_level0_col6">75%</th>
-<th class="col_heading level0 col7" id="T_4138c_level0_col7">max</th>
-<th class="col_heading level0 col8" id="T_4138c_level0_col8">IQR</th>
-<th class="col_heading level0 col9" id="T_4138c_level0_col9">Missing Count</th>
-<th class="col_heading level0 col10" id="T_4138c_level0_col10">Missing %</th>
+<th class="col_heading level0 col0" id="T_a5a07_level0_col0">count</th>
+<th class="col_heading level0 col1" id="T_a5a07_level0_col1">mean</th>
+<th class="col_heading level0 col2" id="T_a5a07_level0_col2">std</th>
+<th class="col_heading level0 col3" id="T_a5a07_level0_col3">min</th>
+<th class="col_heading level0 col4" id="T_a5a07_level0_col4">25%</th>
+<th class="col_heading level0 col5" id="T_a5a07_level0_col5">50%</th>
+<th class="col_heading level0 col6" id="T_a5a07_level0_col6">75%</th>
+<th class="col_heading level0 col7" id="T_a5a07_level0_col7">max</th>
+<th class="col_heading level0 col8" id="T_a5a07_level0_col8">IQR</th>
+<th class="col_heading level0 col9" id="T_a5a07_level0_col9">Missing Count</th>
+<th class="col_heading level0 col10" id="T_a5a07_level0_col10">Missing %</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<th class="row_heading level0 row0" id="T_4138c_level0_row0">ph</th>
-<td class="data row0 col0" id="T_4138c_row0_col0">2,785</td>
-<td class="data row0 col1" id="T_4138c_row0_col1">7.08</td>
-<td class="data row0 col2" id="T_4138c_row0_col2">1.59</td>
-<td class="data row0 col3" id="T_4138c_row0_col3">0.00</td>
-<td class="data row0 col4" id="T_4138c_row0_col4">6.09</td>
-<td class="data row0 col5" id="T_4138c_row0_col5">7.04</td>
-<td class="data row0 col6" id="T_4138c_row0_col6">8.06</td>
-<td class="data row0 col7" id="T_4138c_row0_col7">14.00</td>
-<td class="data row0 col8" id="T_4138c_row0_col8">1.97</td>
-<td class="data row0 col9" id="T_4138c_row0_col9">491</td>
-<td class="data row0 col10" id="T_4138c_row0_col10">14.99%</td>
+<th class="row_heading level0 row0" id="T_a5a07_level0_row0">ph</th>
+<td class="data row0 col0" id="T_a5a07_row0_col0">2,785</td>
+<td class="data row0 col1" id="T_a5a07_row0_col1">7.08</td>
+<td class="data row0 col2" id="T_a5a07_row0_col2">1.59</td>
+<td class="data row0 col3" id="T_a5a07_row0_col3">0.00</td>
+<td class="data row0 col4" id="T_a5a07_row0_col4">6.09</td>
+<td class="data row0 col5" id="T_a5a07_row0_col5">7.04</td>
+<td class="data row0 col6" id="T_a5a07_row0_col6">8.06</td>
+<td class="data row0 col7" id="T_a5a07_row0_col7">14.00</td>
+<td class="data row0 col8" id="T_a5a07_row0_col8">1.97</td>
+<td class="data row0 col9" id="T_a5a07_row0_col9">491</td>
+<td class="data row0 col10" id="T_a5a07_row0_col10">14.99%</td>
 </tr>
 <tr>
-<th class="row_heading level0 row1" id="T_4138c_level0_row1">Hardness</th>
-<td class="data row1 col0" id="T_4138c_row1_col0">3,276</td>
-<td class="data row1 col1" id="T_4138c_row1_col1">196.37</td>
-<td class="data row1 col2" id="T_4138c_row1_col2">32.88</td>
-<td class="data row1 col3" id="T_4138c_row1_col3">47.43</td>
-<td class="data row1 col4" id="T_4138c_row1_col4">176.85</td>
-<td class="data row1 col5" id="T_4138c_row1_col5">196.97</td>
-<td class="data row1 col6" id="T_4138c_row1_col6">216.67</td>
-<td class="data row1 col7" id="T_4138c_row1_col7">323.12</td>
-<td class="data row1 col8" id="T_4138c_row1_col8">39.82</td>
-<td class="data row1 col9" id="T_4138c_row1_col9">0</td>
-<td class="data row1 col10" id="T_4138c_row1_col10">0.00%</td>
+<th class="row_heading level0 row1" id="T_a5a07_level0_row1">Hardness</th>
+<td class="data row1 col0" id="T_a5a07_row1_col0">3,276</td>
+<td class="data row1 col1" id="T_a5a07_row1_col1">196.37</td>
+<td class="data row1 col2" id="T_a5a07_row1_col2">32.88</td>
+<td class="data row1 col3" id="T_a5a07_row1_col3">47.43</td>
+<td class="data row1 col4" id="T_a5a07_row1_col4">176.85</td>
+<td class="data row1 col5" id="T_a5a07_row1_col5">196.97</td>
+<td class="data row1 col6" id="T_a5a07_row1_col6">216.67</td>
+<td class="data row1 col7" id="T_a5a07_row1_col7">323.12</td>
+<td class="data row1 col8" id="T_a5a07_row1_col8">39.82</td>
+<td class="data row1 col9" id="T_a5a07_row1_col9">0</td>
+<td class="data row1 col10" id="T_a5a07_row1_col10">0.00%</td>
 </tr>
 <tr>
-<th class="row_heading level0 row2" id="T_4138c_level0_row2">Solids</th>
-<td class="data row2 col0" id="T_4138c_row2_col0">3,276</td>
-<td class="data row2 col1" id="T_4138c_row2_col1">22,014.09</td>
-<td class="data row2 col2" id="T_4138c_row2_col2">8,768.57</td>
-<td class="data row2 col3" id="T_4138c_row2_col3">320.94</td>
-<td class="data row2 col4" id="T_4138c_row2_col4">15,666.69</td>
-<td class="data row2 col5" id="T_4138c_row2_col5">20,927.83</td>
-<td class="data row2 col6" id="T_4138c_row2_col6">27,332.76</td>
-<td class="data row2 col7" id="T_4138c_row2_col7">61,227.20</td>
-<td class="data row2 col8" id="T_4138c_row2_col8">11,666.07</td>
-<td class="data row2 col9" id="T_4138c_row2_col9">0</td>
-<td class="data row2 col10" id="T_4138c_row2_col10">0.00%</td>
+<th class="row_heading level0 row2" id="T_a5a07_level0_row2">Solids</th>
+<td class="data row2 col0" id="T_a5a07_row2_col0">3,276</td>
+<td class="data row2 col1" id="T_a5a07_row2_col1">22,014.09</td>
+<td class="data row2 col2" id="T_a5a07_row2_col2">8,768.57</td>
+<td class="data row2 col3" id="T_a5a07_row2_col3">320.94</td>
+<td class="data row2 col4" id="T_a5a07_row2_col4">15,666.69</td>
+<td class="data row2 col5" id="T_a5a07_row2_col5">20,927.83</td>
+<td class="data row2 col6" id="T_a5a07_row2_col6">27,332.76</td>
+<td class="data row2 col7" id="T_a5a07_row2_col7">61,227.20</td>
+<td class="data row2 col8" id="T_a5a07_row2_col8">11,666.07</td>
+<td class="data row2 col9" id="T_a5a07_row2_col9">0</td>
+<td class="data row2 col10" id="T_a5a07_row2_col10">0.00%</td>
 </tr>
 <tr>
-<th class="row_heading level0 row3" id="T_4138c_level0_row3">Chloramines</th>
-<td class="data row3 col0" id="T_4138c_row3_col0">3,276</td>
-<td class="data row3 col1" id="T_4138c_row3_col1">7.12</td>
-<td class="data row3 col2" id="T_4138c_row3_col2">1.58</td>
-<td class="data row3 col3" id="T_4138c_row3_col3">0.35</td>
-<td class="data row3 col4" id="T_4138c_row3_col4">6.13</td>
-<td class="data row3 col5" id="T_4138c_row3_col5">7.13</td>
-<td class="data row3 col6" id="T_4138c_row3_col6">8.11</td>
-<td class="data row3 col7" id="T_4138c_row3_col7">13.13</td>
-<td class="data row3 col8" id="T_4138c_row3_col8">1.99</td>
-<td class="data row3 col9" id="T_4138c_row3_col9">0</td>
-<td class="data row3 col10" id="T_4138c_row3_col10">0.00%</td>
+<th class="row_heading level0 row3" id="T_a5a07_level0_row3">Chloramines</th>
+<td class="data row3 col0" id="T_a5a07_row3_col0">3,276</td>
+<td class="data row3 col1" id="T_a5a07_row3_col1">7.12</td>
+<td class="data row3 col2" id="T_a5a07_row3_col2">1.58</td>
+<td class="data row3 col3" id="T_a5a07_row3_col3">0.35</td>
+<td class="data row3 col4" id="T_a5a07_row3_col4">6.13</td>
+<td class="data row3 col5" id="T_a5a07_row3_col5">7.13</td>
+<td class="data row3 col6" id="T_a5a07_row3_col6">8.11</td>
+<td class="data row3 col7" id="T_a5a07_row3_col7">13.13</td>
+<td class="data row3 col8" id="T_a5a07_row3_col8">1.99</td>
+<td class="data row3 col9" id="T_a5a07_row3_col9">0</td>
+<td class="data row3 col10" id="T_a5a07_row3_col10">0.00%</td>
 </tr>
 <tr>
-<th class="row_heading level0 row4" id="T_4138c_level0_row4">Sulfate</th>
-<td class="data row4 col0" id="T_4138c_row4_col0">2,495</td>
-<td class="data row4 col1" id="T_4138c_row4_col1">333.78</td>
-<td class="data row4 col2" id="T_4138c_row4_col2">41.42</td>
-<td class="data row4 col3" id="T_4138c_row4_col3">129.00</td>
-<td class="data row4 col4" id="T_4138c_row4_col4">307.70</td>
-<td class="data row4 col5" id="T_4138c_row4_col5">333.07</td>
-<td class="data row4 col6" id="T_4138c_row4_col6">359.95</td>
-<td class="data row4 col7" id="T_4138c_row4_col7">481.03</td>
-<td class="data row4 col8" id="T_4138c_row4_col8">52.25</td>
-<td class="data row4 col9" id="T_4138c_row4_col9">781</td>
-<td class="data row4 col10" id="T_4138c_row4_col10">23.84%</td>
+<th class="row_heading level0 row4" id="T_a5a07_level0_row4">Sulfate</th>
+<td class="data row4 col0" id="T_a5a07_row4_col0">2,495</td>
+<td class="data row4 col1" id="T_a5a07_row4_col1">333.78</td>
+<td class="data row4 col2" id="T_a5a07_row4_col2">41.42</td>
+<td class="data row4 col3" id="T_a5a07_row4_col3">129.00</td>
+<td class="data row4 col4" id="T_a5a07_row4_col4">307.70</td>
+<td class="data row4 col5" id="T_a5a07_row4_col5">333.07</td>
+<td class="data row4 col6" id="T_a5a07_row4_col6">359.95</td>
+<td class="data row4 col7" id="T_a5a07_row4_col7">481.03</td>
+<td class="data row4 col8" id="T_a5a07_row4_col8">52.25</td>
+<td class="data row4 col9" id="T_a5a07_row4_col9">781</td>
+<td class="data row4 col10" id="T_a5a07_row4_col10">23.84%</td>
 </tr>
 <tr>
-<th class="row_heading level0 row5" id="T_4138c_level0_row5">Conductivity</th>
-<td class="data row5 col0" id="T_4138c_row5_col0">3,276</td>
-<td class="data row5 col1" id="T_4138c_row5_col1">426.21</td>
-<td class="data row5 col2" id="T_4138c_row5_col2">80.82</td>
-<td class="data row5 col3" id="T_4138c_row5_col3">181.48</td>
-<td class="data row5 col4" id="T_4138c_row5_col4">365.73</td>
-<td class="data row5 col5" id="T_4138c_row5_col5">421.88</td>
-<td class="data row5 col6" id="T_4138c_row5_col6">481.79</td>
-<td class="data row5 col7" id="T_4138c_row5_col7">753.34</td>
-<td class="data row5 col8" id="T_4138c_row5_col8">116.06</td>
-<td class="data row5 col9" id="T_4138c_row5_col9">0</td>
-<td class="data row5 col10" id="T_4138c_row5_col10">0.00%</td>
+<th class="row_heading level0 row5" id="T_a5a07_level0_row5">Conductivity</th>
+<td class="data row5 col0" id="T_a5a07_row5_col0">3,276</td>
+<td class="data row5 col1" id="T_a5a07_row5_col1">426.21</td>
+<td class="data row5 col2" id="T_a5a07_row5_col2">80.82</td>
+<td class="data row5 col3" id="T_a5a07_row5_col3">181.48</td>
+<td class="data row5 col4" id="T_a5a07_row5_col4">365.73</td>
+<td class="data row5 col5" id="T_a5a07_row5_col5">421.88</td>
+<td class="data row5 col6" id="T_a5a07_row5_col6">481.79</td>
+<td class="data row5 col7" id="T_a5a07_row5_col7">753.34</td>
+<td class="data row5 col8" id="T_a5a07_row5_col8">116.06</td>
+<td class="data row5 col9" id="T_a5a07_row5_col9">0</td>
+<td class="data row5 col10" id="T_a5a07_row5_col10">0.00%</td>
 </tr>
 <tr>
-<th class="row_heading level0 row6" id="T_4138c_level0_row6">Organic_carbon</th>
-<td class="data row6 col0" id="T_4138c_row6_col0">3,276</td>
-<td class="data row6 col1" id="T_4138c_row6_col1">14.28</td>
-<td class="data row6 col2" id="T_4138c_row6_col2">3.31</td>
-<td class="data row6 col3" id="T_4138c_row6_col3">2.20</td>
-<td class="data row6 col4" id="T_4138c_row6_col4">12.07</td>
-<td class="data row6 col5" id="T_4138c_row6_col5">14.22</td>
-<td class="data row6 col6" id="T_4138c_row6_col6">16.56</td>
-<td class="data row6 col7" id="T_4138c_row6_col7">28.30</td>
-<td class="data row6 col8" id="T_4138c_row6_col8">4.49</td>
-<td class="data row6 col9" id="T_4138c_row6_col9">0</td>
-<td class="data row6 col10" id="T_4138c_row6_col10">0.00%</td>
+<th class="row_heading level0 row6" id="T_a5a07_level0_row6">Organic_carbon</th>
+<td class="data row6 col0" id="T_a5a07_row6_col0">3,276</td>
+<td class="data row6 col1" id="T_a5a07_row6_col1">14.28</td>
+<td class="data row6 col2" id="T_a5a07_row6_col2">3.31</td>
+<td class="data row6 col3" id="T_a5a07_row6_col3">2.20</td>
+<td class="data row6 col4" id="T_a5a07_row6_col4">12.07</td>
+<td class="data row6 col5" id="T_a5a07_row6_col5">14.22</td>
+<td class="data row6 col6" id="T_a5a07_row6_col6">16.56</td>
+<td class="data row6 col7" id="T_a5a07_row6_col7">28.30</td>
+<td class="data row6 col8" id="T_a5a07_row6_col8">4.49</td>
+<td class="data row6 col9" id="T_a5a07_row6_col9">0</td>
+<td class="data row6 col10" id="T_a5a07_row6_col10">0.00%</td>
 </tr>
 <tr>
-<th class="row_heading level0 row7" id="T_4138c_level0_row7">Trihalomethanes</th>
-<td class="data row7 col0" id="T_4138c_row7_col0">3,114</td>
-<td class="data row7 col1" id="T_4138c_row7_col1">66.40</td>
-<td class="data row7 col2" id="T_4138c_row7_col2">16.18</td>
-<td class="data row7 col3" id="T_4138c_row7_col3">0.74</td>
-<td class="data row7 col4" id="T_4138c_row7_col4">55.84</td>
-<td class="data row7 col5" id="T_4138c_row7_col5">66.62</td>
-<td class="data row7 col6" id="T_4138c_row7_col6">77.34</td>
-<td class="data row7 col7" id="T_4138c_row7_col7">124.00</td>
-<td class="data row7 col8" id="T_4138c_row7_col8">21.49</td>
-<td class="data row7 col9" id="T_4138c_row7_col9">162</td>
-<td class="data row7 col10" id="T_4138c_row7_col10">4.95%</td>
+<th class="row_heading level0 row7" id="T_a5a07_level0_row7">Trihalomethanes</th>
+<td class="data row7 col0" id="T_a5a07_row7_col0">3,114</td>
+<td class="data row7 col1" id="T_a5a07_row7_col1">66.40</td>
+<td class="data row7 col2" id="T_a5a07_row7_col2">16.18</td>
+<td class="data row7 col3" id="T_a5a07_row7_col3">0.74</td>
+<td class="data row7 col4" id="T_a5a07_row7_col4">55.84</td>
+<td class="data row7 col5" id="T_a5a07_row7_col5">66.62</td>
+<td class="data row7 col6" id="T_a5a07_row7_col6">77.34</td>
+<td class="data row7 col7" id="T_a5a07_row7_col7">124.00</td>
+<td class="data row7 col8" id="T_a5a07_row7_col8">21.49</td>
+<td class="data row7 col9" id="T_a5a07_row7_col9">162</td>
+<td class="data row7 col10" id="T_a5a07_row7_col10">4.95%</td>
 </tr>
 <tr>
-<th class="row_heading level0 row8" id="T_4138c_level0_row8">Turbidity</th>
-<td class="data row8 col0" id="T_4138c_row8_col0">3,276</td>
-<td class="data row8 col1" id="T_4138c_row8_col1">3.97</td>
-<td class="data row8 col2" id="T_4138c_row8_col2">0.78</td>
-<td class="data row8 col3" id="T_4138c_row8_col3">1.45</td>
-<td class="data row8 col4" id="T_4138c_row8_col4">3.44</td>
-<td class="data row8 col5" id="T_4138c_row8_col5">3.96</td>
-<td class="data row8 col6" id="T_4138c_row8_col6">4.50</td>
-<td class="data row8 col7" id="T_4138c_row8_col7">6.74</td>
-<td class="data row8 col8" id="T_4138c_row8_col8">1.06</td>
-<td class="data row8 col9" id="T_4138c_row8_col9">0</td>
-<td class="data row8 col10" id="T_4138c_row8_col10">0.00%</td>
+<th class="row_heading level0 row8" id="T_a5a07_level0_row8">Turbidity</th>
+<td class="data row8 col0" id="T_a5a07_row8_col0">3,276</td>
+<td class="data row8 col1" id="T_a5a07_row8_col1">3.97</td>
+<td class="data row8 col2" id="T_a5a07_row8_col2">0.78</td>
+<td class="data row8 col3" id="T_a5a07_row8_col3">1.45</td>
+<td class="data row8 col4" id="T_a5a07_row8_col4">3.44</td>
+<td class="data row8 col5" id="T_a5a07_row8_col5">3.96</td>
+<td class="data row8 col6" id="T_a5a07_row8_col6">4.50</td>
+<td class="data row8 col7" id="T_a5a07_row8_col7">6.74</td>
+<td class="data row8 col8" id="T_a5a07_row8_col8">1.06</td>
+<td class="data row8 col9" id="T_a5a07_row8_col9">0</td>
+<td class="data row8 col10" id="T_a5a07_row8_col10">0.00%</td>
 </tr>
 <tr>
-<th class="row_heading level0 row9" id="T_4138c_level0_row9">Potability</th>
-<td class="data row9 col0" id="T_4138c_row9_col0">3,276</td>
-<td class="data row9 col1" id="T_4138c_row9_col1">0.39</td>
-<td class="data row9 col2" id="T_4138c_row9_col2">0.49</td>
-<td class="data row9 col3" id="T_4138c_row9_col3">0.00</td>
-<td class="data row9 col4" id="T_4138c_row9_col4">0.00</td>
-<td class="data row9 col5" id="T_4138c_row9_col5">0.00</td>
-<td class="data row9 col6" id="T_4138c_row9_col6">1.00</td>
-<td class="data row9 col7" id="T_4138c_row9_col7">1.00</td>
-<td class="data row9 col8" id="T_4138c_row9_col8">1.00</td>
-<td class="data row9 col9" id="T_4138c_row9_col9">0</td>
-<td class="data row9 col10" id="T_4138c_row9_col10">0.00%</td>
+<th class="row_heading level0 row9" id="T_a5a07_level0_row9">Potability</th>
+<td class="data row9 col0" id="T_a5a07_row9_col0">3,276</td>
+<td class="data row9 col1" id="T_a5a07_row9_col1">0.39</td>
+<td class="data row9 col2" id="T_a5a07_row9_col2">0.49</td>
+<td class="data row9 col3" id="T_a5a07_row9_col3">0.00</td>
+<td class="data row9 col4" id="T_a5a07_row9_col4">0.00</td>
+<td class="data row9 col5" id="T_a5a07_row9_col5">0.00</td>
+<td class="data row9 col6" id="T_a5a07_row9_col6">1.00</td>
+<td class="data row9 col7" id="T_a5a07_row9_col7">1.00</td>
+<td class="data row9 col8" id="T_a5a07_row9_col8">1.00</td>
+<td class="data row9 col9" id="T_a5a07_row9_col9">0</td>
+<td class="data row9 col10" id="T_a5a07_row9_col10">0.00%</td>
 </tr>
 </tbody>
 </table>
@@ -8487,7 +8487,7 @@ memory usage: 256.1 KB
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=4fe98b43">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c65a3cac">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8497,7 +8497,7 @@ memory usage: 256.1 KB
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=ff9eb176">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=c1efdb55">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8572,7 +8572,7 @@ memory usage: 256.1 KB
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=a1ee6ec7">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=3c0d06e0">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8582,7 +8582,7 @@ memory usage: 256.1 KB
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=c37e42f3">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=c97ea052">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8619,7 +8619,7 @@ Verification Passed: Every water sample represents a distinct observation.
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=75331350">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=5cec5a49">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8647,7 +8647,7 @@ Verification Passed: Every water sample represents a distinct observation.
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=4f4da14a">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=68124c8e">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8683,7 +8683,7 @@ Verification Passed: Every water sample represents a distinct observation.
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=791005e2">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=d255ef90">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8750,7 +8750,7 @@ Verification Passed: Every water sample represents a distinct observation.
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=646d2257">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=7a641e41">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8760,14 +8760,14 @@ Verification Passed: Every water sample represents a distinct observation.
 <h2 id="5.-Step-by-Step-Data-Cleaning-Implementation">5. Step-by-Step Data Cleaning Implementation<a class="anchor-link" href="#5.-Step-by-Step-Data-Cleaning-Implementation">¶</a></h2><p>We now implement our <strong>5-stage domain-informed cleaning pipeline</strong>.</p>
 <hr/>
 <h3 id="Step-1:-Enforcing-Physical-pH-Boundaries-(0-to-14)">Step 1: Enforcing Physical pH Boundaries (0 to 14)<a class="anchor-link" href="#Step-1:-Enforcing-Physical-pH-Boundaries-(0-to-14)">¶</a></h3><h4 id="Scientific-Rationale:">Scientific Rationale:<a class="anchor-link" href="#Scientific-Rationale:">¶</a></h4><ul>
-<li>By thermodynamic definition, aqueous pH is defined as $-\log_{10}[	ext{H}_3	ext{O}^+]$ and strictly bounded between <strong>0 (extreme acid) and 14 (extreme base)</strong>.</li>
+<li>By thermodynamic definition, aqueous pH is defined as $-\log_{10}[\text{H}_3\text{O}^+]$ and strictly bounded between <strong>0 (extreme acid) and 14 (extreme base)</strong>.</li>
 <li>Any reading $&lt; 0$ or $&gt; 14$ is physically impossible in natural water bodies and indicates a faulty glass electrode or calibration drift.</li>
 <li><strong>Cleaning Action:</strong> Convert out-of-bound readings to <code>NaN</code> so they are safely imputed in Step 2.</li>
 </ul>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=7f9127e3">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=05fcd852">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8807,7 +8807,7 @@ Step 1 Complete: Physical bounds [0, 14] enforced on pH feature.
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=7ceed0c5">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=841aa0d2">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8827,7 +8827,7 @@ Step 1 Complete: Physical bounds [0, 14] enforced on pH feature.
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=984c6305">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=05f0b2d7">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8875,7 +8875,7 @@ Step 1 Complete: Physical bounds [0, 14] enforced on pH feature.
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=8aece6aa">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=6dcf1863">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8923,7 +8923,7 @@ Remaining Missing Values After Step 2: 0
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=74928d5d">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=eb4c52d6">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8971,7 +8971,7 @@ Remaining Missing Values After Step 2: 0
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=55dbca12">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=7a664cbe">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8984,13 +8984,13 @@ Remaining Missing Values After Step 2: 0
 <li>However, deep groundwater, mineral springs, and brackish aquifers naturally contain <strong>10,000 to 30,000 ppm</strong> of dissolved minerals.</li>
 </ul>
 <h4 id="The-Risk-of-Blind-Outlier-Removal:">The Risk of Blind Outlier Removal:<a class="anchor-link" href="#The-Risk-of-Blind-Outlier-Removal:">¶</a></h4><ul>
-<li>A standard statistical rule ($1.5 	imes 	ext{IQR}$, mild fence $pprox 49,000	ext{ ppm}$) would delete <strong>47 valid, natural mineral water samples</strong>.</li>
-<li>Using an <strong>extreme outlier fence ($3.0 	imes 	ext{IQR} pprox 57,403	ext{ ppm}$)</strong> successfully protects authentic mineral water while pruning sensor spikes above 57,000 ppm.</li>
+<li>A standard statistical rule ($1.5 \times \text{IQR}$, mild fence $\approx 49,000\text{ ppm}$) would delete <strong>47 valid, natural mineral water samples</strong>.</li>
+<li>Using an <strong>extreme outlier fence ($3.0 \times \text{IQR} \approx 57,403\text{ ppm}$)</strong> successfully protects authentic mineral water while pruning sensor spikes above 57,000 ppm.</li>
 </ul>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=11cbdced">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=0bb7a554">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -9056,7 +9056,7 @@ Remaining Missing Values After Step 2: 0
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=8386f715">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=a6034196">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -9092,7 +9092,7 @@ Retained 3,276 samples (100.00% data retention rate).
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=03bb47a4">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=dc0decb7">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -9107,7 +9107,7 @@ Retained 3,276 samples (100.00% data retention rate).
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=dc522d02">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=5b466c04">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -9245,7 +9245,7 @@ Retained 3,276 samples (100.00% data retention rate).
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=5b4296dc">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=85c294b6">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -9256,7 +9256,7 @@ Retained 3,276 samples (100.00% data retention rate).
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=87236a2c">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=c15aaf68">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -9311,7 +9311,7 @@ Total Missing Values: 0
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=bc126c55">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=f3a20a6b">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -9322,7 +9322,7 @@ Total Missing Values: 0
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=8d7d7a8e">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=33bd833a">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -9498,7 +9498,7 @@ Total Missing Values: 0
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=5472ae41">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=4579915a">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -9554,7 +9554,7 @@ Total Missing Values: 0
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=87a1d18a">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=06c08211">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -9599,7 +9599,7 @@ Total Missing Values: 0
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=4c33c969">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=77d996a2">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -9608,31 +9608,31 @@ Total Missing Values: 0
 <hr/>
 <h2 id="7.-Presentation-&amp;-Oral-Defense-Guide">7. Presentation &amp; Oral Defense Guide<a class="anchor-link" href="#7.-Presentation-&amp;-Oral-Defense-Guide">¶</a></h2><p>Use these concise, plain-English answers during oral defense and presentation Q&amp;A:</p>
 <hr/>
-<h3 id="%F0%9F%8E%99%EF%B8%8F-Question-1:-Where-does-this-dataset-originate-from-and-what-does-it-represent?">🎙️ Question 1: Where does this dataset originate from and what does it represent?<a class="anchor-link" href="#%F0%9F%8E%99%EF%B8%8F-Question-1:-Where-does-this-dataset-originate-from-and-what-does-it-represent?">¶</a></h3><blockquote>
+<h3 id="Question-1:-Where-does-this-dataset-originate-from-and-what-does-it-represent?">Question 1: Where does this dataset originate from and what does it represent?<a class="anchor-link" href="#Question-1:-Where-does-this-dataset-originate-from-and-what-does-it-represent?">¶</a></h3><blockquote>
 <p><strong>Answer:</strong> Sourced from the public <a href="https://www.kaggle.com/datasets/adityakadiwal/water-potability">Kaggle Water Potability Dataset</a> by Aditya Kadiwal. It comprises <strong>3,276 water quality observations</strong> across diverse water sources (aquifers, treatment plants, taps) tested across 9 physicochemical metrics against World Health Organization (WHO) safety standards.</p>
 </blockquote>
 <hr/>
-<h3 id="%F0%9F%8E%99%EF%B8%8F-Question-2:-Why-did-you-impute-missing-values-instead-of-deleting-rows-(dropna())?">🎙️ Question 2: Why did you impute missing values instead of deleting rows (<code>dropna()</code>)?<a class="anchor-link" href="#%F0%9F%8E%99%EF%B8%8F-Question-2:-Why-did-you-impute-missing-values-instead-of-deleting-rows-(dropna())?">¶</a></h3><blockquote>
+<h3 id="Question-2:-Why-did-you-impute-missing-values-instead-of-deleting-rows-(dropna())?">Question 2: Why did you impute missing values instead of deleting rows (<code>dropna()</code>)?<a class="anchor-link" href="#Question-2:-Why-did-you-impute-missing-values-instead-of-deleting-rows-(dropna())?">¶</a></h3><blockquote>
 <p><strong>Answer:</strong> Nearly <strong>39% of the water samples (1,265 rows)</strong> had at least one missing chemical test. If we deleted those rows, we would discard over one-third of our dataset, reducing statistical power and introducing severe sample selection bias.</p>
 </blockquote>
 <hr/>
-<h3 id="%F0%9F%8E%99%EF%B8%8F-Question-3:-Why-did-you-choose-the-Median-over-the-Mean-for-imputation?">🎙️ Question 3: Why did you choose the Median over the Mean for imputation?<a class="anchor-link" href="#%F0%9F%8E%99%EF%B8%8F-Question-3:-Why-did-you-choose-the-Median-over-the-Mean-for-imputation?">¶</a></h3><blockquote>
+<h3 id="Question-3:-Why-did-you-choose-the-Median-over-the-Mean-for-imputation?">Question 3: Why did you choose the Median over the Mean for imputation?<a class="anchor-link" href="#Question-3:-Why-did-you-choose-the-Median-over-the-Mean-for-imputation?">¶</a></h3><blockquote>
 <p><strong>Answer:</strong> Environmental chemical concentrations are inherently skewed by localized mineral spikes. The <strong>mean</strong> is distorted by extreme values, whereas the <strong>median</strong> identifies the true middle value representing typical water chemistry.</p>
 </blockquote>
 <hr/>
-<h3 id="%F0%9F%8E%99%EF%B8%8F-Question-4:-Why-did-you-perform-imputation-separately-for-Potable-and-Non-Potable-water?">🎙️ Question 4: Why did you perform imputation separately for Potable and Non-Potable water?<a class="anchor-link" href="#%F0%9F%8E%99%EF%B8%8F-Question-4:-Why-did-you-perform-imputation-separately-for-Potable-and-Non-Potable-water?">¶</a></h3><blockquote>
+<h3 id="Question-4:-Why-did-you-perform-imputation-separately-for-Potable-and-Non-Potable-water?">Question 4: Why did you perform imputation separately for Potable and Non-Potable water?<a class="anchor-link" href="#Question-4:-Why-did-you-perform-imputation-separately-for-Potable-and-Non-Potable-water?">¶</a></h3><blockquote>
 <p><strong>Answer:</strong> Safe drinking water and contaminated water have fundamentally different chemical baselines. Grouping by <code>Potability</code> ensures that missing measurements are filled with realistic numbers characteristic of each water type, preserving class separability for downstream modeling.</p>
 </blockquote>
 <hr/>
-<h3 id="%F0%9F%8E%99%EF%B8%8F-Question-5:-Why-must-pH-strictly-adhere-to-the-range-of-0-to-14?">🎙️ Question 5: Why must pH strictly adhere to the range of 0 to 14?<a class="anchor-link" href="#%F0%9F%8E%99%EF%B8%8F-Question-5:-Why-must-pH-strictly-adhere-to-the-range-of-0-to-14?">¶</a></h3><blockquote>
-<p><strong>Answer:</strong> In physical chemistry, aqueous pH is defined as $-\log_{10}[	ext{H}_3	ext{O}^+]$ and is bounded between 0 (concentrated acid) and 14 (concentrated base). Any reading outside this range represents a physical probe malfunction or uncalibrated voltage.</p>
+<h3 id="Question-5:-Why-must-pH-strictly-adhere-to-the-range-of-0-to-14?">Question 5: Why must pH strictly adhere to the range of 0 to 14?<a class="anchor-link" href="#Question-5:-Why-must-pH-strictly-adhere-to-the-range-of-0-to-14?">¶</a></h3><blockquote>
+<p><strong>Answer:</strong> In physical chemistry, aqueous pH is defined as $-\log_{10}[\text{H}_3\text{O}^+]$ and is bounded between 0 (concentrated acid) and 14 (concentrated base). Any reading outside this range represents a physical probe malfunction or uncalibrated voltage.</p>
 </blockquote>
 <hr/>
-<h3 id="%F0%9F%8E%99%EF%B8%8F-Question-6:-Why-didn't-you-delete-all-high-Solids-(TDS)-as-outliers-using-the-standard-$1.5-%09imes-%09ext%7BIQR%7D$-rule?">🎙️ Question 6: Why didn't you delete all high Solids (TDS) as outliers using the standard $1.5 	imes 	ext{IQR}$ rule?<a class="anchor-link" href="#%F0%9F%8E%99%EF%B8%8F-Question-6:-Why-didn't-you-delete-all-high-Solids-(TDS)-as-outliers-using-the-standard-$1.5-%09imes-%09ext%7BIQR%7D$-rule?">¶</a></h3><blockquote>
-<p><strong>Answer:</strong> Natural groundwater and mineral-rich springs can legitimately contain 20,000 to 30,000 ppm of dissolved minerals. A standard $1.5 	imes 	ext{IQR}$ rule would have deleted 47 authentic, valid mineral water samples. An extreme cutoff ($3.0 	imes 	ext{IQR} pprox 57,403	ext{ ppm}$) protects natural mineral water while pruning genuine transmission spikes.</p>
+<h3 id="Question-6:-Why-didn't-you-delete-all-high-Solids-(TDS)-as-outliers-using-the-standard-$1.5-%5Ctimes-%5Ctext%7BIQR%7D$-rule?">Question 6: Why didn't you delete all high Solids (TDS) as outliers using the standard $1.5 \times \text{IQR}$ rule?<a class="anchor-link" href="#Question-6:-Why-didn't-you-delete-all-high-Solids-(TDS)-as-outliers-using-the-standard-$1.5-%5Ctimes-%5Ctext%7BIQR%7D$-rule?">¶</a></h3><blockquote>
+<p><strong>Answer:</strong> Natural groundwater and mineral-rich springs can legitimately contain 20,000 to 30,000 ppm of dissolved minerals. A standard $1.5 \times \text{IQR}$ rule would have deleted 47 authentic, valid mineral water samples. An extreme cutoff ($3.0 \times \text{IQR} \approx 57,403\text{ ppm}$) protects natural mineral water while pruning genuine transmission spikes.</p>
 </blockquote>
 <hr/>
-<h3 id="%F0%9F%8E%AF-Key-Presentation-Takeaways-Checklist:">🎯 Key Presentation Takeaways Checklist:<a class="anchor-link" href="#%F0%9F%8E%AF-Key-Presentation-Takeaways-Checklist:">¶</a></h3><ol>
+<h3 id="Key-Presentation-Takeaways-Checklist:">Key Presentation Takeaways Checklist:<a class="anchor-link" href="#Key-Presentation-Takeaways-Checklist:">¶</a></h3><ol>
 <li><strong>Source:</strong> Kaggle Water Potability Dataset by Aditya Kadiwal (3,276 rows × 10 columns).</li>
 <li><strong>Key Challenge:</strong> 38.6% missing measurements, sensor probe glitches, and skewed mineral concentrations.</li>
 <li><strong>Core Solutions:</strong> Physical pH bounding, class-conditional median imputation, and extreme IQR pruning.</li>
@@ -9642,7 +9642,7 @@ Total Missing Values: 0
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b414f65f">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c78c3974">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>

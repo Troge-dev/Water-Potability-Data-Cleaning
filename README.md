@@ -91,14 +91,15 @@ In this project, we built a **step-by-step Python cleaning pipeline** to fix the
 
 | Metric / Check | Raw Dataset (Before) | Cleaned Dataset (After) | Improvement |
 | :--- | :--- | :--- | :--- |
-| **Total Rows** | 3,276 | 3,248 | Kept 99.1% of all water samples |
+| **Total Rows** | 3,276 | 3,276 | **100.0% Sample Retention** |
 | **Total Missing Values** | **1,434** | **0** | **100% Complete** |
 | **Missing Sulfate Rows** | 781 (23.84%) | 0 (0.00%) | Filled using group median |
 | **Missing pH Rows** | 491 (14.99%) | 0 (0.00%) | Filled using group median |
 | **Missing Trihalomethanes** | 162 (4.95%) | 0 (0.00%) | Filled using group median |
-| **Impossible pH (< 0 or > 14)** | Flagged / Bad readings | 0 (Enforced 0–14) | Fixed broken sensor errors |
-| **Max Solids (ppm)** | 61,227.19 ppm | 57,403.46 ppm | Removed extreme spikes |
+| **Physical pH Range** | Bounded [0, 14] | Verified [0, 14] | Validated physical sensor limits |
+| **Max Solids (ppm)** | 61,227.20 ppm | 61,227.20 ppm | Preserved natural mineral water |
 | **Status** | 38.6% Incomplete | **100% Clean & Ready** | Ready for EDA & modeling |
+
 
 ---
 

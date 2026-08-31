@@ -38,7 +38,7 @@ jobs:
 
       - name: Build Jupyter Book HTML
         env:
-          BASE_URL: "/Water-Potability-Data-Cleaning/"
+          BASE_URL: "/Water-Potability-Data-Cleaning"
         run: |
           jupyter-book build --html
 

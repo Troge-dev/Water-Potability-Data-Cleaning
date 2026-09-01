@@ -14,17 +14,20 @@ A domain-informed exploratory data analysis and data cleaning pipeline for munic
 
 ---
 
-## 1. Project Background & Problem Formulation
+## 1. Problem Selection & Domain Understanding
 
-Access to safe, uncontaminated drinking water is essential to public health and disease prevention. Municipal water utilities, environmental agencies, and water treatment plants continuously monitor physicochemical indicators such as **acidity (pH)**, **disinfection residuals (chloramines)**, **dissolved minerals**, and **clarity (turbidity)** to evaluate water safety.
+Clean drinking water is fundamental to public health and disease prevention. Aligned with **UN Sustainable Development Goal 6** (United Nations, n.d.) and the **World Health Organization (WHO, 2017)** *Guidelines for Drinking-water Quality*, safe water management requires strict surveillance of physical and chemical water properties.
 
-This project evaluates the [Kaggle Water Potability Dataset](https://www.kaggle.com/datasets/adityakadiwal/water-potability) compiled by Aditya Kadiwal, containing real-world physicochemical metrics from 3,276 water bodies benchmarked against World Health Organization (WHO) guidelines.
+However, environmental monitoring datasets frequently contain missing values, sensor glitches, and anomalies due to equipment failure and transmission issues (Liu et al., 2022). Consequently, rigorous **Exploratory Data Analysis (EDA)** and data cleaning are required to audit data reliability before interpreting water safety classifications.
+
+### Core Research Question
+> **"How can we systematically detect, audit, and clean measurement anomalies, missing chemical measurements, and mineral concentration outliers to accurately interpret water-quality data and assess water safety using applicable World Health Organization (WHO) guidelines?"**
 
 ### The Real-World Engineering Challenge
-Raw sensor logs and chemical assay records from environmental sampling frequently suffer from three critical data quality defects:
-1. **Pervasive Missingness:** Incomplete laboratory assays due to testing costs or sensor limits affecting **38.61% of all samples (1,265 rows)**.
-2. **Physical Boundary Violations:** Uncalibrated sensor voltage generating impossible readings (e.g., negative pH or values exceeding 14).
-3. **Extreme Mineral Spikes:** Skewed distributions where natural mineral-rich groundwater reaches tens of thousands of ppm, requiring careful handling so authentic samples are not wrongly pruned.
+This project evaluates the [Kaggle Water Potability Dataset](https://www.kaggle.com/datasets/adityakadiwal/water-potability) (3,276 samples across 9 physicochemical metrics), addressing three critical data quality defects:
+1. **Pervasive Missingness:** Incomplete laboratory assays affecting **38.61% of all samples (1,265 rows)** across `ph`, `Sulfate`, and `Trihalomethanes`.
+2. **Physical Boundary Violations:** Uncalibrated sensor readings (e.g., pH outside standard chemical bounds).
+3. **Extreme Mineral Spikes:** Highly skewed natural mineral concentrations requiring domain-informed filtering rather than blind deletion.
 
 Our objective is to engineer an **end-to-end Python data cleaning pipeline** that remediates all anomalies, preserves 100% of authentic water samples, and produces an audited, analysis-ready dataset.
 
@@ -111,7 +114,7 @@ Full Python implementation, missingness matrix, MCAR/MAR diagnostics, benchmark 
 | **Sample Retention** | 3,276 samples | Domain-informed filtering | **3,276 samples (100.0%)** | Preserved |
 | **Total Missing Values** | 1,434 missing across 3 features | Class-conditional median imputation | **0 missing values (0.0%)** | Resolved |
 | **pH Physical Range** | Sensor errors outside $[0, 14]$ | Replaced invalid with NaN and imputed | Strictly within **$[0.00, 14.00]$** | Validated |
-| **Mineral Outliers (Solids)** | 47 samples flagged by $1.5	imes	ext{IQR}$ | Extreme fence ($$3.0 \times \text{IQR}$ = 62,331	ext{ ppm}$) | **0 authentic samples deleted** | Preserved |
+| **Mineral Outliers (Solids)** | 47 samples flagged by $1.5 \times \text{IQR}$ | Extreme fence ($3.0 \times \text{IQR} = 62,331\text{ ppm}$) | **0 authentic samples deleted** | Preserved |
 | **Numeric Precision** | Inconsistent decimal places | Precision standardization | **Standardized 3 decimals** | Cleaned |
 
 ---
@@ -119,5 +122,6 @@ Full Python implementation, missingness matrix, MCAR/MAR diagnostics, benchmark 
 ## References & Attribution
 
 1. **Dataset Source:** Kadiwal, Aditya. *Water Potability: Drinking Water Quality Dataset*. Available on Kaggle: [https://www.kaggle.com/datasets/adityakadiwal/water-potability](https://www.kaggle.com/datasets/adityakadiwal/water-potability).
-2. **International Benchmark:** World Health Organization (WHO). *Guidelines for Drinking-water Quality (4th Edition)*, Geneva: World Health Organization.
-3. **Sustainable Development Goals:** United Nations Department of Economic and Social Affairs. *Goal 6: Ensure availability and sustainable management of water and sanitation for all*.
+2. **Missing Data in Environmental Monitoring:** Liu, X., Zhang, X., & Wang, X. (2022). Handling missing data in near real-time environmental monitoring: A system and a review of selected methods. *Future Generation Computer Systems*, 128, 63–72. [https://doi.org/10.1016/j.future.2021.09.033](https://doi.org/10.1016/j.future.2021.09.033)
+3. **Global SDG Target:** United Nations. (n.d.). *Water and sanitation*. United Nations Sustainable Development Goals. [https://www.un.org/sustainabledevelopment/water-and-sanitation/](https://www.un.org/sustainabledevelopment/water-and-sanitation/)
+4. **Water Quality Guidelines:** World Health Organization. (2017). *Guidelines for drinking-water quality: Fourth edition incorporating the first addendum*. Geneva: World Health Organization. [https://www.who.int/publications/i/item/9789241549950](https://www.who.int/publications/i/item/9789241549950)

@@ -7810,13 +7810,13 @@ a.anchor-link {
 <li><strong>Course:</strong> DS311 - Exploratory Data Analysis (EDA)</li>
 <li><strong>Domain:</strong> Environmental Engineering &amp; Public Health (Clean Drinking Water Safety)</li>
 <li><strong>Dataset Source:</strong> <a href="https://www.kaggle.com/datasets/adityakadiwal/water-potability">Water Potability Dataset on Kaggle</a> by Aditya Kadiwal</li>
-<li><strong>Raw Data File:</strong> <code>data/raw/water_potability.csv</code> (3,276 water samples × 10 features)</li>
-<li><strong>Processed Data File:</strong> <code>data/processed/water_potability_cleaned.csv</code> (3,276 water samples × 10 features)</li>
+<li><strong>Raw Data File:</strong> <code>data/raw/water_potability.csv</code> (3,276 water samples x 10 features)</li>
+<li><strong>Processed Data File:</strong> <code>data/processed/water_potability_cleaned.csv</code> (3,276 water samples x 10 features)</li>
 <li><strong>Evaluation Standards:</strong> World Health Organization (WHO) Guidelines for Drinking-water Quality (4th Edition)</li>
 </ul>
 <hr/>
 <h3 id="Core-Investigation-Question">Core Investigation Question<a class="anchor-link" href="#Core-Investigation-Question">¶</a></h3><blockquote>
-<p><strong>"How can we systematically detect, audit, and clean sensor probe anomalies, missing chemical measurements, and mineral concentration outliers to accurately determine whether water is safe to drink based on World Health Organization (WHO) standards?"</strong></p>
+<p><strong>"How can we systematically detect, audit, and clean measurement anomalies, missing chemical measurements, and mineral concentration outliers to accurately interpret water-quality data and assess water safety using applicable World Health Organization (WHO) guidelines?"</strong></p>
 </blockquote>
 <h3 id="Core-Engineering-Rule">Core Engineering Rule<a class="anchor-link" href="#Core-Engineering-Rule">¶</a></h3><blockquote>
 <p><em>"Never delete or modify data simply because it looks different. First understand the underlying real-world water chemistry and physical sensor mechanisms, then apply domain-justified rules."</em></p>
@@ -7832,7 +7832,19 @@ a.anchor-link {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <hr/>
-<h2 id="1.-Problem-Selection-&amp;-Domain-Understanding">1. Problem Selection &amp; Domain Understanding<a class="anchor-link" href="#1.-Problem-Selection-&amp;-Domain-Understanding">¶</a></h2><p>Clean drinking water is fundamental to human life and disease prevention. In municipal water systems, wells, and water treatment plants, specialized sensors and laboratory assays measure physicochemical properties to determine if water is <strong>Potable (<code>Potability = 1</code>, Safe to drink)</strong> or <strong>Non-Potable (<code>Potability = 0</code>, Contaminated / Unsafe)</strong>.</p>
+<h2 id="1.-Problem-Selection-&amp;-Domain-Understanding">1. Problem Selection &amp; Domain Understanding<a class="anchor-link" href="#1.-Problem-Selection-&amp;-Domain-Understanding">¶</a></h2><h3 id="1.1-Public-Health-Context-&amp;-Global-Mandate">1.1 Public Health Context &amp; Global Mandate<a class="anchor-link" href="#1.1-Public-Health-Context-&amp;-Global-Mandate">¶</a></h3><ul>
+<li><strong>WHO Safe Water Framework:</strong> Protecting drinking-water quality is a primary objective of the <strong>World Health Organization (WHO, 2017)</strong>. The WHO Guidelines establish a risk-management framework for identifying hazards, setting health-based targets, and monitoring water safety from source to consumer.</li>
+<li><strong>UN SDG 6 Target:</strong> Aligns directly with <strong>UN Sustainable Development Goal 6 (United Nations, n.d.)</strong>, which calls for universal access to safe drinking water and improved water quality by reducing pollution and eliminating hazardous chemicals.</li>
+</ul>
+<h3 id="1.2-Data-Quality-&amp;-Environmental-Monitoring-Challenges">1.2 Data Quality &amp; Environmental Monitoring Challenges<a class="anchor-link" href="#1.2-Data-Quality-&amp;-Environmental-Monitoring-Challenges">¶</a></h3><ul>
+<li><strong>Chemical Surveillance:</strong> Water-quality assessment requires continuous surveillance of physical and chemical parameters (acidity, dissolved solids, disinfectant residuals, and byproducts).</li>
+<li><strong>Missing Data &amp; Sensor Failures:</strong> Environmental monitoring data frequently suffers from missing measurements and anomalies due to equipment failure, sensor replacement, and communication issues <strong>(Liu et al., 2022)</strong>.</li>
+<li><strong>Role of EDA:</strong> Data must be systematically examined for missing values, unusual measurements, and outliers through <strong>Exploratory Data Analysis (EDA)</strong> before drawing conclusions about water safety.</li>
+</ul>
+<h3 id="1.3-Core-Research-Question">1.3 Core Research Question<a class="anchor-link" href="#1.3-Core-Research-Question">¶</a></h3><blockquote>
+<p><strong>"How can we systematically detect, audit, and clean measurement anomalies, missing chemical measurements, and mineral concentration outliers to accurately interpret water-quality data and assess water safety using applicable World Health Organization (WHO) guidelines?"</strong></p>
+</blockquote>
+<hr/>
 <h3 id="The-4-Stages-of-Data-Preparation">The 4 Stages of Data Preparation<a class="anchor-link" href="#The-4-Stages-of-Data-Preparation">¶</a></h3><table>
 <thead>
 <tr>
@@ -7850,7 +7862,7 @@ a.anchor-link {
 <tr>
 <td style="text-align:left"><strong>2. Data Cleaning</strong></td>
 <td style="text-align:left">Identifying and remediating data quality flaws (missingness, sensor glitches, impossible values).</td>
-<td style="text-align:left">Enforcing pH boundaries (0–14), group-conditional median imputation, and extreme IQR outlier pruning.</td>
+<td style="text-align:left">Enforcing pH boundaries (0 to 14), group-conditional median imputation, and extreme IQR outlier pruning.</td>
 </tr>
 <tr>
 <td style="text-align:left"><strong>3. Data Transformation</strong></td>
@@ -7864,6 +7876,7 @@ a.anchor-link {
 </tr>
 </tbody>
 </table>
+<hr/>
 <h3 id="Dataset-Feature-Codebook-&amp;-Safe-Thresholds-(WHO-Standards)">Dataset Feature Codebook &amp; Safe Thresholds (WHO Standards)<a class="anchor-link" href="#Dataset-Feature-Codebook-&amp;-Safe-Thresholds-(WHO-Standards)">¶</a></h3><table>
 <thead>
 <tr>
@@ -7878,7 +7891,7 @@ a.anchor-link {
 <tr>
 <td style="text-align:left"><code>ph</code></td>
 <td style="text-align:left"><code>float64</code></td>
-<td style="text-align:left">pH scale (0–14)</td>
+<td style="text-align:left">pH scale (0 to 14)</td>
 <td style="text-align:left">Acidity vs. Alkalinity</td>
 <td style="text-align:left"><strong>6.5 to 8.5</strong> (Neutral range; outside causes corrosion or scaling)</td>
 </tr>
@@ -7887,7 +7900,7 @@ a.anchor-link {
 <td style="text-align:left"><code>float64</code></td>
 <td style="text-align:left">mg/L</td>
 <td style="text-align:left">Dissolved Calcium and Magnesium minerals</td>
-<td style="text-align:left">Typically <strong>150–300 mg/L</strong>; high levels hinder soap lathering</td>
+<td style="text-align:left">Typically <strong>150 to 300 mg/L</strong>; high levels hinder soap lathering</td>
 </tr>
 <tr>
 <td style="text-align:left"><code>Solids</code></td>
@@ -10046,8 +10059,9 @@ Total Missing Values: 0
 <hr/>
 <h2 id="8.-References-&amp;-Dataset-Attribution">8. References &amp; Dataset Attribution<a class="anchor-link" href="#8.-References-&amp;-Dataset-Attribution">¶</a></h2><ol>
 <li><strong>Dataset Source:</strong> Kadiwal, Aditya. <em>Water Potability: Drinking Water Quality Dataset</em>. Available on Kaggle: <a href="https://www.kaggle.com/datasets/adityakadiwal/water-potability">https://www.kaggle.com/datasets/adityakadiwal/water-potability</a>.</li>
-<li><strong>Water Quality Guidelines:</strong> World Health Organization (WHO). <em>Guidelines for Drinking-water Quality (4th Edition)</em>, Geneva: World Health Organization.</li>
-<li><strong>Global Target:</strong> United Nations Sustainable Development Goal 6 (UN SDG 6): <em>Ensure availability and sustainable management of water and sanitation for all</em>.</li>
+<li><strong>Missing Data in Environmental Monitoring:</strong> Liu, X., Zhang, X., &amp; Wang, X. (2022). Handling missing data in near real-time environmental monitoring: A system and a review of selected methods. <em>Future Generation Computer Systems</em>, 128, 63–72. <a href="https://doi.org/10.1016/j.future.2021.09.033">https://doi.org/10.1016/j.future.2021.09.033</a></li>
+<li><strong>Global SDG Target:</strong> United Nations. (n.d.). <em>Water and sanitation</em>. United Nations Sustainable Development Goals. <a href="https://www.un.org/sustainabledevelopment/water-and-sanitation/">https://www.un.org/sustainabledevelopment/water-and-sanitation/</a></li>
+<li><strong>Water Quality Guidelines:</strong> World Health Organization. (2017). <em>Guidelines for drinking-water quality: Fourth edition incorporating the first addendum</em>. Geneva: World Health Organization. <a href="https://www.who.int/publications/i/item/9789241549950">https://www.who.int/publications/i/item/9789241549950</a></li>
 </ol>
 </div>
 </div>

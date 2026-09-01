@@ -13,7 +13,7 @@ An end-to-end, domain-informed data cleaning, exploratory analysis, and diagnost
 
 ## 1. Project Overview & Scope
 
-Clean drinking water is fundamental to human life and disease prevention (UN Sustainable Development Goal 6). Municipal utilities and environmental agencies measure chemical and physical indicators ? including **pH**, **chlorine residuals**, **dissolved minerals**, and **clarity** ? to determine whether water is potable.
+Clean drinking water is fundamental to human life and disease prevention (UN Sustainable Development Goal 6). Municipal utilities and environmental agencies measure chemical and physical indicators — including **pH**, **chlorine residuals**, **dissolved minerals**, and **clarity** — to determine whether water is potable.
 
 This project evaluates the [Kaggle Water Potability Dataset](https://www.kaggle.com/datasets/adityakadiwal/water-potability) by Aditya Kadiwal (3,276 water samples across 9 physicochemical features + 1 potability classification target).
 
@@ -45,7 +45,7 @@ The Jupyter Book documentation is structured into **3 core pages**:
 
 | Column Name | Metric / Unit | WHO Safe Benchmark | Everyday Description |
 | :--- | :--- | :--- | :--- |
-| `ph` | pH ($0\text{?}14$) | **6.5 to 8.5** | Acidity / alkalinity measure. Values $<6.5$ corrode pipes; $>8.5$ cause mineral scaling. |
+| `ph` | pH ($0\text{ to }14$) | **6.5 to 8.5** | Acidity / alkalinity measure. Values $<6.5$ corrode pipes; $>8.5$ cause mineral scaling. |
 | `Hardness` | mg/L | *No strict limit* ($<200$) | Dissolved calcium and magnesium from mineral deposits. |
 | `Solids` | ppm | **$< 500\text{ to }1,000$** | Total Dissolved Solids (TDS); natural mineral aquifers can reach extreme levels. |
 | `Chloramines` | ppm | **Up to 4.0 ppm** | Chlorine-ammonia disinfectant added to kill pathogens. |
@@ -89,5 +89,6 @@ jupyter-book build --html
 ## 6. References & Attribution
 
 1. **Dataset Source:** Kadiwal, Aditya. *Water Potability: Drinking Water Quality Dataset*. Available on Kaggle: [https://www.kaggle.com/datasets/adityakadiwal/water-potability](https://www.kaggle.com/datasets/adityakadiwal/water-potability).
-2. **International Benchmark:** World Health Organization (WHO). *Guidelines for Drinking-water Quality (4th Edition)*, Geneva: World Health Organization.
-3. **Sustainable Development Goals:** UN SDG 6: Clean Water and Sanitation.
+2. **Missing Data in Environmental Monitoring:** Liu, X., Zhang, X., & Wang, X. (2022). Handling missing data in near real-time environmental monitoring: A system and a review of selected methods. *Future Generation Computer Systems*, 128, 63–72. [https://doi.org/10.1016/j.future.2021.09.033](https://doi.org/10.1016/j.future.2021.09.033)
+3. **Global SDG Target:** United Nations. (n.d.). *Water and sanitation*. United Nations Sustainable Development Goals. [https://www.un.org/sustainabledevelopment/water-and-sanitation/](https://www.un.org/sustainabledevelopment/water-and-sanitation/)
+4. **Water Quality Guidelines:** World Health Organization. (2017). *Guidelines for drinking-water quality: Fourth edition incorporating the first addendum*. Geneva: World Health Organization. [https://www.who.int/publications/i/item/9789241549950](https://www.who.int/publications/i/item/9789241549950)

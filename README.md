@@ -11,7 +11,7 @@ An end-to-end, domain-informed data cleaning, exploratory analysis, and diagnost
 
 ---
 
-## 1. Project Overview & Scope
+## I. Project Overview & Scope
 
 Clean drinking water is fundamental to human life and disease prevention (UN Sustainable Development Goal 6). Municipal utilities and environmental agencies measure chemical and physical indicators — including **pH**, **chlorine residuals**, **dissolved minerals**, and **clarity** — to determine whether water is potable.
 
@@ -29,19 +29,19 @@ This project evaluates the [Kaggle Water Potability Dataset](https://www.kaggle.
 
 ---
 
-## 2. Jupyter Book Structure & Navigation
+## II. Jupyter Book Structure & Navigation
 
 The Jupyter Book documentation is structured into **3 core pages**:
 
 | Page | File Path | Focus & Content |
 | :--- | :--- | :--- |
-| **1. Landing Page & Codebook** | `docs/index.md` | Executive overview, project background, 9-feature physicochemical codebook, WHO drinking limits, and 4 preparation stages. |
-| **2. Interactive Pipeline** | `notebooks/presentation.ipynb` | Full executable Python pipeline, missingness matrix, MCAR/MAR diagnostics, benchmark comparison tables, and before-vs-after audit dashboards. |
-| **3. Defense & Q&A Guide** | `docs/03_defense_guide.md` | 13 oral defense questions with two-tier answers (Spoken Summary & Technical Rationale) and presentation cheat sheet. |
+| **I. Landing Page & Codebook** | `docs/index.md` | Executive overview, project background, 9-feature physicochemical codebook, WHO drinking limits, and 4 preparation stages. |
+| **II. Interactive Pipeline** | `notebooks/presentation.ipynb` | Full executable Python pipeline, missingness matrix, MCAR/MAR diagnostics, benchmark comparison tables, and before-vs-after audit dashboards. |
+| **III. Defense & Q&A Guide** | `docs/03_defense_guide.md` | 13 oral defense questions with two-tier answers (Spoken Summary & Technical Rationale) and presentation cheat sheet. |
 
 ---
 
-## 3. Dataset Codebook & Physicochemical Reference
+## III. Dataset Codebook & Physicochemical Reference
 
 | Column Name | Metric / Unit | WHO Safe Benchmark | Everyday Description |
 | :--- | :--- | :--- | :--- |
@@ -58,7 +58,7 @@ The Jupyter Book documentation is structured into **3 core pages**:
 
 ---
 
-## 4. Summary Quality Audit Matrix
+## IV. Summary Quality Audit Matrix
 
 | Metric | Raw Dataset (Before) | Pipeline Action | Cleaned Dataset (After) | Status |
 | :--- | :--- | :--- | :--- | :--- |
@@ -70,7 +70,7 @@ The Jupyter Book documentation is structured into **3 core pages**:
 
 ---
 
-## 5. Quickstart & Installation
+## V. Quickstart & Installation
 
 ```bash
 # 1. Clone the repository
@@ -86,7 +86,7 @@ jupyter-book build --html
 
 ---
 
-## 6. References & Attribution
+## VI. References & Attribution
 
 1. **Dataset Source:** Kadiwal, Aditya. *Water Potability: Drinking Water Quality Dataset*. Available on Kaggle: [https://www.kaggle.com/datasets/adityakadiwal/water-potability](https://www.kaggle.com/datasets/adityakadiwal/water-potability).
 2. **Missing Data in Environmental Monitoring:** Liu, X., Zhang, X., & Wang, X. (2022). Handling missing data in near real-time environmental monitoring: A system and a review of selected methods. *Future Generation Computer Systems*, 128, 63–72. [https://doi.org/10.1016/j.future.2021.09.033](https://doi.org/10.1016/j.future.2021.09.033)

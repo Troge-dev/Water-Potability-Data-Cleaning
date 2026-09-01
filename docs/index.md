@@ -14,7 +14,7 @@ A domain-informed exploratory data analysis and data cleaning pipeline for munic
 
 ---
 
-## 1. Problem Selection & Domain Understanding
+## I. Problem Selection & Domain Understanding
 
 Clean drinking water is fundamental to public health and disease prevention. Aligned with **UN Sustainable Development Goal 6** (United Nations, n.d.) and the **World Health Organization (WHO, 2017)** *Guidelines for Drinking-water Quality*, safe water management requires strict surveillance of physical and chemical water properties.
 
@@ -33,7 +33,7 @@ Our objective is to engineer an **end-to-end Python data cleaning pipeline** tha
 
 ---
 
-## 2. Dataset Codebook & Physicochemical Parameters
+## II. Dataset Codebook & Physicochemical Parameters
 
 The dataset contains 9 continuous water quality metrics and 1 binary potability label. Below is the complete parameter codebook with everyday explanations and WHO health standards:
 
@@ -52,27 +52,27 @@ The dataset contains 9 continuous water quality metrics and 1 binary potability 
 
 ---
 
-## 3. The 4 Stages of Data Preparation
+## III. The 4 Stages of Data Preparation
 
 Our data preparation workflow follows a structured, standard methodology:
 
 ```mermaid
 flowchart LR
-    A["1. Data Wrangling
-(Ingestion & Schema Check)"] --> B["2. Data Cleaning
+    A["I. Data Wrangling
+(Ingestion & Schema Check)"] --> B["II. Data Cleaning
 (Bounds, Missingness, Outliers)"]
-    B --> C["3. Transformation
+    B --> C["III. Transformation
 (Rounding & Type Casting)"]
-    C --> D["4. Verification & Audit
+    C --> D["IV. Verification & Audit
 (Dashboards & Quality Matrix)"]
 ```
 
 | Stage | Process Description | Pipeline Implementation |
 | :--- | :--- | :--- |
-| **1. Data Wrangling** | Ingesting raw CSV files and performing schema and duplicate checks. | Loaded `water_potability.csv` (3,276 rows x 10 cols); verified 0 duplicate rows. |
-| **2. Data Cleaning** | Resolving sensor boundary violations, missing values, and outliers. | Applied pH physical bounding $[0, 14]$, class-conditional group median imputation, and $3.0 \times \text{IQR}$ extreme outlier filtering. |
-| **3. Data Transformation** | Standardizing data precision and feature encodings. | Rounded all 9 continuous floats to 3 decimal places; cast `Potability` to `int64`. |
-| **4. Verification & Audit** | Comparing pre- and post-cleaning metrics and exporting clean data. | Validated 0 missing values, 100% sample retention (3,276/3,276), and saved to `data/processed/water_potability_cleaned.csv`. |
+| **I. Data Wrangling** | Ingesting raw CSV files and performing schema and duplicate checks. | Loaded `water_potability.csv` (3,276 rows x 10 cols); verified 0 duplicate rows. |
+| **II. Data Cleaning** | Resolving sensor boundary violations, missing values, and outliers. | Applied pH physical bounding $[0, 14]$, class-conditional group median imputation, and $3.0 \times \text{IQR}$ extreme outlier filtering. |
+| **III. Data Transformation** | Standardizing data precision and feature encodings. | Rounded all 9 continuous floats to 3 decimal places; cast `Potability` to `int64`. |
+| **IV. Verification & Audit** | Comparing pre- and post-cleaning metrics and exporting clean data. | Validated 0 missing values, 100% sample retention (3,276/3,276), and saved to `data/processed/water_potability_cleaned.csv`. |
 
 ```{admonition} Core Engineering Principle
 :class: important
@@ -81,24 +81,24 @@ flowchart LR
 
 ---
 
-## 4. Jupyter Book Roadmap & Navigation
+## IV. Jupyter Book Roadmap & Navigation
 
 This interactive book is organized into **3 core pages**:
 
 ````{grid} 1 2 3 3
-```{grid-item-card} 1. Project Overview & Codebook
+```{grid-item-card} I. Project Overview & Codebook
 :link: ./index.md
 **Landing Page**
 Executive overview, domain background, complete physicochemical codebook, and WHO drinking safety standards.
 ```
 
-```{grid-item-card} 2. Data Cleaning Pipeline
+```{grid-item-card} II. Data Cleaning Pipeline
 :link: ../notebooks/presentation.ipynb
 **Interactive Notebook**
 Full Python implementation, missingness matrix, MCAR/MAR diagnostics, benchmark comparisons, and before-vs-after audit dashboards.
 ```
 
-```{grid-item-card} 3. Defense & Q&A Guide
+```{grid-item-card} III. Defense & Q&A Guide
 :link: ./03_defense_guide.md
 **Oral Defense Guide**
 13 comprehensive questions with two-tier answers (Simple Spoken vs. Technical Rationale) and presentation cheat sheet.
@@ -107,7 +107,7 @@ Full Python implementation, missingness matrix, MCAR/MAR diagnostics, benchmark 
 
 ---
 
-## 5. Summary Quality Audit
+## V. Summary Quality Audit
 
 | Diagnostic Check | Raw Dataset (Before) | Pipeline Action | Cleaned Dataset (After) | Status |
 | :--- | :--- | :--- | :--- | :--- |
@@ -119,7 +119,7 @@ Full Python implementation, missingness matrix, MCAR/MAR diagnostics, benchmark 
 
 ---
 
-## References & Attribution
+## VI. References & Attribution
 
 1. **Dataset Source:** Kadiwal, Aditya. *Water Potability: Drinking Water Quality Dataset*. Available on Kaggle: [https://www.kaggle.com/datasets/adityakadiwal/water-potability](https://www.kaggle.com/datasets/adityakadiwal/water-potability).
 2. **Missing Data in Environmental Monitoring:** Liu, X., Zhang, X., & Wang, X. (2022). Handling missing data in near real-time environmental monitoring: A system and a review of selected methods. *Future Generation Computer Systems*, 128, 63–72. [https://doi.org/10.1016/j.future.2021.09.033](https://doi.org/10.1016/j.future.2021.09.033)

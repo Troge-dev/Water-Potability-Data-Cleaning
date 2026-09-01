@@ -7802,25 +7802,31 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Laboratory-Activity-1:-Data-Cleaning-Pipeline">Laboratory Activity 1: Data Cleaning Pipeline<a class="anchor-link" href="#Laboratory-Activity-1:-Data-Cleaning-Pipeline">¶</a></h1><h2 id="Water-Potability-and-Chemical-Safety-Assessment">Water Potability and Chemical Safety Assessment<a class="anchor-link" href="#Water-Potability-and-Chemical-Safety-Assessment">¶</a></h2><h3 id="Exploratory-Data-Analysis-&amp;-Quality-Assurance-Pipeline">Exploratory Data Analysis &amp; Quality Assurance Pipeline<a class="anchor-link" href="#Exploratory-Data-Analysis-&amp;-Quality-Assurance-Pipeline">¶</a></h3><p><a href="https://troge-dev.github.io/Water-Potability-Data-Cleaning/"><img alt="Jupyter Book" src="https://img.shields.io/badge/Jupyter%20Book-Interactive%20Site-blue"/></a>
-<a href="https://www.kaggle.com/datasets/adityakadiwal/water-potability"><img alt="Dataset Source" src="https://img.shields.io/badge/Dataset-Kaggle%20Water%20Potability-green"/></a>
-<a href="https://sdgs.un.org/goals/goal6"><img alt="UN SDG 6" src="https://img.shields.io/badge/UN%20SDG%206-Clean%20Water%20%26%20Sanitation-orange"/></a></p>
-<hr/>
-<h3 id="Project-Metadata">Project Metadata<a class="anchor-link" href="#Project-Metadata">¶</a></h3><ul>
-<li><strong>Course:</strong> DS311 - Exploratory Data Analysis (EDA)</li>
-<li><strong>Domain:</strong> Environmental Engineering &amp; Public Health (Clean Drinking Water Safety)</li>
-<li><strong>Dataset Source:</strong> <a href="https://www.kaggle.com/datasets/adityakadiwal/water-potability">Water Potability Dataset on Kaggle</a> by Aditya Kadiwal</li>
-<li><strong>Raw Data File:</strong> <code>data/raw/water_potability.csv</code> (3,276 water samples × 10 features)</li>
-<li><strong>Processed Data File:</strong> <code>data/processed/water_potability_cleaned.csv</code> (3,276 water samples × 10 features)</li>
-<li><strong>Evaluation Standards:</strong> World Health Organization (WHO) Guidelines for Drinking-water Quality (4th Edition)</li>
-</ul>
-<hr/>
-<h3 id="Core-Investigation-Question">Core Investigation Question<a class="anchor-link" href="#Core-Investigation-Question">¶</a></h3><blockquote>
-<p><strong>"How can we systematically detect, audit, and clean sensor probe anomalies, missing chemical measurements, and mineral concentration outliers to accurately determine whether water is safe to drink based on World Health Organization (WHO) standards?"</strong></p>
-</blockquote>
-<h3 id="Core-Engineering-Rule">Core Engineering Rule<a class="anchor-link" href="#Core-Engineering-Rule">¶</a></h3><blockquote>
-<p><em>"Never delete or modify data simply because it looks different. First understand the underlying real-world water chemistry and physical sensor mechanisms, then apply domain-justified rules."</em></p>
-</blockquote>
+<p>×#× ×L×a×b×o×r×a×t×o×r×y× ×A×c×t×i×v×i×t×y× ×1×:× ×D×a×t×a× ×C×l×e×a×n×i×n×g× ×P×i×p×e×l×i×n×e×
+×#×#× ×W×a×t×e×r× ×P×o×t×a×b×i×l×i×t×y× ×a×n×d× ×C×h×e×m×i×c×a×l× ×S×a×f×e×t×y× ×A×s×s×e×s×s×m×e×n×t×
+×#×#×#× ×E×x×p×l×o×r×a×t×o×r×y× ×D×a×t×a× ×A×n×a×l×y×s×i×s× ×&amp;× ×Q×u×a×l×i×t×y× ×A×s×s×u×r×a×n×c×e× ×P×i×p×e×l×i×n×e×
+×
+×[×!×[×J×u×p×y×t×e×r× ×B×o×o×k×]×(×h×t×t×p×s×:×/×/×i×m×g×.×s×h×i×e×l×d×s×.×i×o×/×b×a×d×g×e×/×J×u×p×y×t×e×r×%×2×0×B×o×o×k×-×I×n×t×e×r×a×c×t×i×v×e×%×2×0×S×i×t×e×-×b×l×u×e×)×]×(×h×t×t×p×s×:×/×/×t×r×o×g×e×-×d×e×v×.×g×i×t×h×u×b×.×i×o×/×W×a×t×e×r×-×P×o×t×a×b×i×l×i×t×y×-×D×a×t×a×-×C×l×e×a×n×i×n×g×/×)×
+×[×!×[×D×a×t×a×s×e×t× ×S×o×u×r×c×e×]×(×h×t×t×p×s×:×/×/×i×m×g×.×s×h×i×e×l×d×s×.×i×o×/×b×a×d×g×e×/×D×a×t×a×s×e×t×-×K×a×g×g×l×e×%×2×0×W×a×t×e×r×%×2×0×P×o×t×a×b×i×l×i×t×y×-×g×r×e×e×n×)×]×(×h×t×t×p×s×:×/×/×w×w×w×.×k×a×g×g×l×e×.×c×o×m×/×d×a×t×a×s×e×t×s×/×a×d×i×t×y×a×k×a×d×i×w×a×l×/×w×a×t×e×r×-×p×o×t×a×b×i×l×i×t×y×)×
+×[×!×[×U×N× ×S×D×G× ×6×]×(×h×t×t×p×s×:×/×/×i×m×g×.×s×h×i×e×l×d×s×.×i×o×/×b×a×d×g×e×/×U×N×%×2×0×S×D×G×%×2×0×6×-×C×l×e×a×n×%×2×0×W×a×t×e×r×%×2×0×%×2×6×%×2×0×S×a×n×i×t×a×t×i×o×n×-×o×r×a×n×g×e×)×]×(×h×t×t×p×s×:×/×/×s×d×g×s×.×u×n×.×o×r×g×/×g×o×a×l×s×/×g×o×a×l×6×)×
+×
+×-×-×-×
+×
+×#×#×#× ×P×r×o×j×e×c×t× ×M×e×t×a×d×a×t×a×
+×<em>× ×</em>×<em>×C×o×u×r×s×e×:×</em>×<em>× ×D×S×3×1×1× ×-× ×E×x×p×l×o×r×a×t×o×r×y× ×D×a×t×a× ×A×n×a×l×y×s×i×s× ×(×E×D×A×)×
+×</em>× ×<em>×</em>×D×o×m×a×i×n×:×<em>×</em>× ×E×n×v×i×r×o×n×m×e×n×t×a×l× ×E×n×g×i×n×e×e×r×i×n×g× ×&amp;× ×P×u×b×l×i×c× ×H×e×a×l×t×h× ×(×C×l×e×a×n× ×D×r×i×n×k×i×n×g× ×W×a×t×e×r× ×S×a×f×e×t×y×)×
+×<em>× ×</em>×<em>×D×a×t×a×s×e×t× ×S×o×u×r×c×e×:×</em>×<em>× ×[×W×a×t×e×r× ×P×o×t×a×b×i×l×i×t×y× ×D×a×t×a×s×e×t× ×o×n× ×K×a×g×g×l×e×]×(×h×t×t×p×s×:×/×/×w×w×w×.×k×a×g×g×l×e×.×c×o×m×/×d×a×t×a×s×e×t×s×/×a×d×i×t×y×a×k×a×d×i×w×a×l×/×w×a×t×e×r×-×p×o×t×a×b×i×l×i×t×y×)× ×b×y× ×A×d×i×t×y×a× ×K×a×d×i×w×a×l×
+×</em>× ×<em>×</em>×R×a×w× ×D×a×t×a× ×F×i×l×e×:×<em>×</em>× ×<code>×d×a×t×a×/×r×a×w×/×w×a×t×e×r×_×p×o×t×a×b×i×l×i×t×y×.×c×s×v×</code>× ×(×3×,×2×7×6× ×w×a×t×e×r× ×s×a×m×p×l×e×s× ××× ×1×0× ×f×e×a×t×u×r×e×s×)×
+×<em>× ×</em>×<em>×P×r×o×c×e×s×s×e×d× ×D×a×t×a× ×F×i×l×e×:×</em>×<em>× ×<code>×d×a×t×a×/×p×r×o×c×e×s×s×e×d×/×w×a×t×e×r×_×p×o×t×a×b×i×l×i×t×y×_×c×l×e×a×n×e×d×.×c×s×v×</code>× ×(×3×,×2×7×6× ×w×a×t×e×r× ×s×a×m×p×l×e×s× ××× ×1×0× ×f×e×a×t×u×r×e×s×)×
+×</em>× ×<em>×</em>×E×v×a×l×u×a×t×i×o×n× ×S×t×a×n×d×a×r×d×s×:×<em>×</em>× ×W×o×r×l×d× ×H×e×a×l×t×h× ×O×r×g×a×n×i×z×a×t×i×o×n× ×(×W×H×O×)× ×G×u×i×d×e×l×i×n×e×s× ×f×o×r× ×D×r×i×n×k×i×n×g×-×w×a×t×e×r× ×Q×u×a×l×i×t×y× ×(×4×t×h× ×E×d×i×t×i×o×n×)×
+×
+×-×-×-×
+×
+×#×#×#× ×C×o×r×e× ×I×n×v×e×s×t×i×g×a×t×i×o×n× ×Q×u×e×s×t×i×o×n×
+×&gt;× ×<em>×</em>×"×H×o×w× ×c×a×n× ×w×e× ×s×y×s×t×e×m×a×t×i×c×a×l×l×y× ×d×e×t×e×c×t×,× ×a×u×d×i×t×,× ×a×n×d× ×c×l×e×a×n× ×m×e×a×s×u×r×e×m×e×n×t× ×a×n×o×m×a×l×i×e×s×,× ×m×i×s×s×i×n×g× ×c×h×e×m×i×c×a×l× ×m×e×a×s×u×r×e×m×e×n×t×s×,× ×a×n×d× ×m×i×n×e×r×a×l× ×c×o×n×c×e×n×t×r×a×t×i×o×n× ×o×u×t×l×i×e×r×s× ×t×o× ×a×c×c×u×r×a×t×e×l×y× ×i×n×t×e×r×p×r×e×t× ×w×a×t×e×r×-×q×u×a×l×i×t×y× ×d×a×t×a× ×a×n×d× ×a×s×s×e×s×s× ×w×a×t×e×r× ×s×a×f×e×t×y× ×u×s×i×n×g× ×a×p×p×l×i×c×a×b×l×e× ×W×o×r×l×d× ×H×e×a×l×t×h× ×O×r×g×a×n×i×z×a×t×i×o×n× ×(×W×H×O×)× ×g×u×i×d×e×l×i×n×e×s×?×"×<em>×</em>×
+×
+×#×#×#× ×C×o×r×e× ×E×n×g×i×n×e×e×r×i×n×g× ×R×u×l×e×
+×&gt;× ×<em>×"×N×e×v×e×r× ×d×e×l×e×t×e× ×o×r× ×m×o×d×i×f×y× ×d×a×t×a× ×s×i×m×p×l×y× ×b×e×c×a×u×s×e× ×i×t× ×l×o×o×k×s× ×d×i×f×f×e×r×e×n×t×.× ×F×i×r×s×t× ×u×n×d×e×r×s×t×a×n×d× ×t×h×e× ×u×n×d×e×r×l×y×i×n×g× ×r×e×a×l×-×w×o×r×l×d× ×w×a×t×e×r× ×c×h×e×m×i×s×t×r×y× ×a×n×d× ×p×h×y×s×i×c×a×l× ×s×e×n×s×o×r× ×m×e×c×h×a×n×i×s×m×s×,× ×t×h×e×n× ×a×p×p×l×y× ×d×o×m×a×i×n×-×j×u×s×t×i×f×i×e×d× ×r×u×l×e×s×.×"×</em>×</p>
 </div>
 </div>
 </div>
@@ -7832,7 +7838,19 @@ a.anchor-link {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <hr/>
-<h2 id="1.-Problem-Selection-&amp;-Domain-Understanding">1. Problem Selection &amp; Domain Understanding<a class="anchor-link" href="#1.-Problem-Selection-&amp;-Domain-Understanding">¶</a></h2><p>Clean drinking water is fundamental to human life and disease prevention. In municipal water systems, wells, and water treatment plants, specialized sensors and laboratory assays measure physicochemical properties to determine if water is <strong>Potable (<code>Potability = 1</code>, Safe to drink)</strong> or <strong>Non-Potable (<code>Potability = 0</code>, Contaminated / Unsafe)</strong>.</p>
+<h2 id="1.-Problem-Selection-&amp;-Domain-Understanding">1. Problem Selection &amp; Domain Understanding<a class="anchor-link" href="#1.-Problem-Selection-&amp;-Domain-Understanding">¶</a></h2><h3 id="1.1-Public-Health-Context-&amp;-International-Standards">1.1 Public Health Context &amp; International Standards<a class="anchor-link" href="#1.1-Public-Health-Context-&amp;-International-Standards">¶</a></h3><ul>
+<li><strong>WHO Mandate:</strong> Protecting drinking-water quality is a primary objective of the <strong>World Health Organization (WHO, 2017)</strong>. The WHO Guidelines establish a risk-management framework for identifying hazards, setting health-based targets, and monitoring water safety from source to consumer.</li>
+<li><strong>UN SDG 6 Target:</strong> Aligns with <strong>UN Sustainable Development Goal 6 (United Nations, n.d.)</strong>, calling for universal access to safe drinking water and reducing pollution and hazardous chemical contamination.</li>
+</ul>
+<h3 id="1.2-Data-Quality-&amp;-Environmental-Monitoring-Challenges">1.2 Data Quality &amp; Environmental Monitoring Challenges<a class="anchor-link" href="#1.2-Data-Quality-&amp;-Environmental-Monitoring-Challenges">¶</a></h3><ul>
+<li><strong>Chemical Surveillance:</strong> Routine water assessment requires monitoring physical and chemical characteristics (acidity, dissolved minerals, disinfectants, and byproducts).</li>
+<li><strong>Missing Data &amp; Anomalies:</strong> Environmental monitoring data frequently suffers from missing measurements and anomalies due to equipment failure, sensor replacement, and transmission issues <strong>(Liu et al., 2022)</strong>.</li>
+<li><strong>Role of EDA:</strong> Data must be systematically examined for missingness, unusual values, and outliers through <strong>Exploratory Data Analysis (EDA)</strong> before drawing water safety conclusions.</li>
+</ul>
+<h3 id="1.3-Core-Research-Question">1.3 Core Research Question<a class="anchor-link" href="#1.3-Core-Research-Question">¶</a></h3><blockquote>
+<p><strong>"How can we systematically detect, audit, and clean measurement anomalies, missing chemical measurements, and mineral concentration outliers to accurately interpret water-quality data and assess water safety using applicable World Health Organization (WHO) guidelines?"</strong></p>
+</blockquote>
+<hr/>
 <h3 id="The-4-Stages-of-Data-Preparation">The 4 Stages of Data Preparation<a class="anchor-link" href="#The-4-Stages-of-Data-Preparation">¶</a></h3><table>
 <thead>
 <tr>
@@ -7850,7 +7868,7 @@ a.anchor-link {
 <tr>
 <td style="text-align:left"><strong>2. Data Cleaning</strong></td>
 <td style="text-align:left">Identifying and remediating data quality flaws (missingness, sensor glitches, impossible values).</td>
-<td style="text-align:left">Enforcing pH boundaries (0–14), group-conditional median imputation, and extreme IQR outlier pruning.</td>
+<td style="text-align:left">Enforcing pH boundaries (0 to 14), group-conditional median imputation, and extreme IQR outlier pruning.</td>
 </tr>
 <tr>
 <td style="text-align:left"><strong>3. Data Transformation</strong></td>
@@ -7864,6 +7882,7 @@ a.anchor-link {
 </tr>
 </tbody>
 </table>
+<hr/>
 <h3 id="Dataset-Feature-Codebook-&amp;-Safe-Thresholds-(WHO-Standards)">Dataset Feature Codebook &amp; Safe Thresholds (WHO Standards)<a class="anchor-link" href="#Dataset-Feature-Codebook-&amp;-Safe-Thresholds-(WHO-Standards)">¶</a></h3><table>
 <thead>
 <tr>
@@ -7878,7 +7897,7 @@ a.anchor-link {
 <tr>
 <td style="text-align:left"><code>ph</code></td>
 <td style="text-align:left"><code>float64</code></td>
-<td style="text-align:left">pH scale (0–14)</td>
+<td style="text-align:left">pH scale (0 to 14)</td>
 <td style="text-align:left">Acidity vs. Alkalinity</td>
 <td style="text-align:left"><strong>6.5 to 8.5</strong> (Neutral range; outside causes corrosion or scaling)</td>
 </tr>
@@ -7887,7 +7906,7 @@ a.anchor-link {
 <td style="text-align:left"><code>float64</code></td>
 <td style="text-align:left">mg/L</td>
 <td style="text-align:left">Dissolved Calcium and Magnesium minerals</td>
-<td style="text-align:left">Typically <strong>150–300 mg/L</strong>; high levels hinder soap lathering</td>
+<td style="text-align:left">Typically <strong>150 to 300 mg/L</strong>; high levels hinder soap lathering</td>
 </tr>
 <tr>
 <td style="text-align:left"><code>Solids</code></td>
@@ -10046,8 +10065,9 @@ Total Missing Values: 0
 <hr/>
 <h2 id="8.-References-&amp;-Dataset-Attribution">8. References &amp; Dataset Attribution<a class="anchor-link" href="#8.-References-&amp;-Dataset-Attribution">¶</a></h2><ol>
 <li><strong>Dataset Source:</strong> Kadiwal, Aditya. <em>Water Potability: Drinking Water Quality Dataset</em>. Available on Kaggle: <a href="https://www.kaggle.com/datasets/adityakadiwal/water-potability">https://www.kaggle.com/datasets/adityakadiwal/water-potability</a>.</li>
-<li><strong>Water Quality Guidelines:</strong> World Health Organization (WHO). <em>Guidelines for Drinking-water Quality (4th Edition)</em>, Geneva: World Health Organization.</li>
-<li><strong>Global Target:</strong> United Nations Sustainable Development Goal 6 (UN SDG 6): <em>Ensure availability and sustainable management of water and sanitation for all</em>.</li>
+<li><strong>Missing Data in Environmental Monitoring:</strong> Liu, X., Zhang, X., &amp; Wang, X. (2022). Handling missing data in near real-time environmental monitoring: A system and a review of selected methods. <em>Future Generation Computer Systems</em>, 128, 63-72. <a href="https://doi.org/10.1016/j.future.2021.09.033">https://doi.org/10.1016/j.future.2021.09.033</a></li>
+<li><strong>Global SDG Target:</strong> United Nations. (n.d.). <em>Water and sanitation</em>. United Nations Sustainable Development Goals. <a href="https://www.un.org/sustainabledevelopment/water-and-sanitation/">https://www.un.org/sustainabledevelopment/water-and-sanitation/</a></li>
+<li><strong>Water Quality Guidelines:</strong> World Health Organization. (2017). <em>Guidelines for drinking-water quality: Fourth edition incorporating the first addendum</em>. Geneva: World Health Organization. <a href="https://www.who.int/publications/i/item/9789241549950">https://www.who.int/publications/i/item/9789241549950</a></li>
 </ol>
 </div>
 </div>

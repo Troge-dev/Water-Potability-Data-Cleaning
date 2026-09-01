@@ -119,5 +119,6 @@ Full Python implementation, missingness matrix, MCAR/MAR diagnostics, benchmark 
 ## References & Attribution
 
 1. **Dataset Source:** Kadiwal, Aditya. *Water Potability: Drinking Water Quality Dataset*. Available on Kaggle: [https://www.kaggle.com/datasets/adityakadiwal/water-potability](https://www.kaggle.com/datasets/adityakadiwal/water-potability).
-2. **International Benchmark:** World Health Organization (WHO). *Guidelines for Drinking-water Quality (4th Edition)*, Geneva: World Health Organization.
-3. **Sustainable Development Goals:** United Nations Department of Economic and Social Affairs. *Goal 6: Ensure availability and sustainable management of water and sanitation for all*.
+2. **Missing Data in Environmental Monitoring:** Liu, X., Zhang, X., & Wang, X. (2022). Handling missing data in near real-time environmental monitoring: A system and a review of selected methods. *Future Generation Computer Systems*, 128, 63–72. [https://doi.org/10.1016/j.future.2021.09.033](https://doi.org/10.1016/j.future.2021.09.033)
+3. **Global SDG Target:** United Nations. (n.d.). *Water and sanitation*. United Nations Sustainable Development Goals. [https://www.un.org/sustainabledevelopment/water-and-sanitation/](https://www.un.org/sustainabledevelopment/water-and-sanitation/)
+4. **Water Quality Guidelines:** World Health Organization. (2017). *Guidelines for drinking-water quality: Fourth edition incorporating the first addendum*. Geneva: World Health Organization. [https://www.who.int/publications/i/item/9789241549950](https://www.who.int/publications/i/item/9789241549950)

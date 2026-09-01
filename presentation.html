@@ -7881,7 +7881,6 @@ a.anchor-link {
 <thead>
 <tr>
 <th style="text-align:left">Variable</th>
-<th style="text-align:left">Data Type</th>
 <th style="text-align:left">Measurement Unit</th>
 <th style="text-align:left">Everyday Meaning</th>
 <th style="text-align:left">WHO Safe Drinking Guideline</th>
@@ -7890,70 +7889,60 @@ a.anchor-link {
 <tbody>
 <tr>
 <td style="text-align:left"><code>ph</code></td>
-<td style="text-align:left"><code>float64</code></td>
 <td style="text-align:left">pH scale (0 to 14)</td>
 <td style="text-align:left">Acidity vs. Alkalinity</td>
 <td style="text-align:left"><strong>6.5 to 8.5</strong> (Neutral range; outside causes corrosion or scaling)</td>
 </tr>
 <tr>
 <td style="text-align:left"><code>Hardness</code></td>
-<td style="text-align:left"><code>float64</code></td>
 <td style="text-align:left">mg/L</td>
 <td style="text-align:left">Dissolved Calcium and Magnesium minerals</td>
 <td style="text-align:left">Typically <strong>150 to 300 mg/L</strong>; high levels hinder soap lathering</td>
 </tr>
 <tr>
 <td style="text-align:left"><code>Solids</code></td>
-<td style="text-align:left"><code>float64</code></td>
 <td style="text-align:left">ppm (mg/L)</td>
 <td style="text-align:left">Total Dissolved Solids (TDS) / Mineral salts</td>
 <td style="text-align:left"><strong>$\le$ 1,000 ppm</strong> desirable; high TDS produces salty taste</td>
 </tr>
 <tr>
 <td style="text-align:left"><code>Chloramines</code></td>
-<td style="text-align:left"><code>float64</code></td>
 <td style="text-align:left">ppm</td>
 <td style="text-align:left">Disinfectant added to kill microbial pathogens</td>
 <td style="text-align:left"><strong>$\le$ 4.0 ppm</strong> (Safe for human consumption while sterilizing)</td>
 </tr>
 <tr>
 <td style="text-align:left"><code>Sulfate</code></td>
-<td style="text-align:left"><code>float64</code></td>
 <td style="text-align:left">mg/L</td>
 <td style="text-align:left">Naturally occurring rock and soil minerals</td>
 <td style="text-align:left"><strong>$\le$ 250 mg/L</strong> (Guideline limit; excess can cause laxative effects)</td>
 </tr>
 <tr>
 <td style="text-align:left"><code>Conductivity</code></td>
-<td style="text-align:left"><code>float64</code></td>
 <td style="text-align:left">$\mu\text{S/cm}$</td>
 <td style="text-align:left">Electrical conductance from dissolved ions</td>
 <td style="text-align:left"><strong>$\le$ 400 $\mu\text{S/cm}$</strong> typical for clean freshwater</td>
 </tr>
 <tr>
 <td style="text-align:left"><code>Organic_carbon</code></td>
-<td style="text-align:left"><code>float64</code></td>
 <td style="text-align:left">ppm</td>
 <td style="text-align:left">Total Organic Carbon (decaying plant/organic matter)</td>
 <td style="text-align:left">Lower is cleaner; indicates runoff or surface contamination</td>
 </tr>
 <tr>
 <td style="text-align:left"><code>Trihalomethanes</code></td>
-<td style="text-align:left"><code>float64</code></td>
 <td style="text-align:left">$\mu\text{g/L}$</td>
 <td style="text-align:left">Chemical byproducts from chlorine disinfection</td>
 <td style="text-align:left"><strong>$\le$ 80 $\mu\text{g/L}$</strong> (Regulated disinfectant byproduct standard)</td>
 </tr>
 <tr>
 <td style="text-align:left"><code>Turbidity</code></td>
-<td style="text-align:left"><code>float64</code></td>
 <td style="text-align:left">NTU</td>
 <td style="text-align:left">Cloudiness or haziness caused by suspended particles</td>
 <td style="text-align:left"><strong>$\le$ 5.0 NTU</strong> (Clean drinking water should be clear)</td>
 </tr>
 <tr>
 <td style="text-align:left"><code>Potability</code></td>
-<td style="text-align:left"><code>int64</code></td>
 <td style="text-align:left">Binary (0 or 1)</td>
 <td style="text-align:left"><strong>Target Variable:</strong> Drinking safety classification</td>
 <td style="text-align:left"><code>1</code> = Potable (Safe), <code>0</code> = Non-Potable (Unsafe)</td>
